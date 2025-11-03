@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservations & Contact - Lounge 44 Kyengera</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Book your table at Lounge 44 Kyengera. Real-time availability, multiple dining areas, and personalized service for an unforgettable experience." />
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flounge446254back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation with Contextual Intelligence -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-subtle sticky top-0 z-50" id="main-nav">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <text x="20" y="26" text-anchor="middle" class="text-sm font-bold fill-current">44</text>
+                    </svg>
+                    <span class="text-2xl font-playfair font-bold text-primary">Lounge 44</span>
+                </div>
+
+                <!-- Desktop Navigation with Contextual Content -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="menu_ordering.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
+                    <a href="events_entertainment.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Events</a>
+                    <a href="gallery_experience.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="text-primary font-semibold">Reservations</a>
+                    <a href="about_lounge_44.html" class="text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden" id="mobile-menu">
+                <div class="py-4 space-y-4 border-t border-surface-300">
+                    <a href="homepage.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="menu_ordering.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
+                    <a href="events_entertainment.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Events</a>
+                    <a href="gallery_experience.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="block text-primary font-semibold">Reservations</a>
+                    <a href="about_lounge_44.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 bg-gradient-to-r from-primary to-primary-700 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Lounge 44 Interior" class="w-full h-full object-cover opacity-30" onerror="this.src='https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="relative container-custom h-full flex items-center justify-center">
+            <div class="text-white max-w-2xl w-full px-4 py-10 sm:py-16 md:py-20 lg:py-0 bg-black/40 rounded-xl shadow-lg flex flex-col items-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 sm:mb-6 text-white text-center">Reserve Your Experience</h1>
+                <p class="text-base sm:text-lg md:text-xl opacity-90 mb-6 sm:mb-8 text-center">Book your table for an unforgettable evening of exceptional cuisine and warm hospitality</p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                    <a href="#booking" class="btn-secondary w-full sm:w-auto text-center">Book Now</a>
+                    <a href="tel:+256700123456" class="btn-outline text-white border-white hover:bg-white hover:text-primary w-full sm:w-auto text-center">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Bar -->
+    <section class="bg-secondary py-4">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-col lg:flex-row items-center justify-between gap-6 md:gap-8">
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-primary w-full justify-center">
+                    <div class="flex items-center gap-2 justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span class="font-semibold">+256 700 123 456</span>
+                    </div>
+                    <div class="flex items-center gap-2 justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span class="font-semibold">reservations@lounge44.ug</span>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mt-2">
+                    <span class="text-primary font-semibold text-center">Open Daily: 11:00 AM - 2:00 AM</span>
+                    <a href="https://wa.me/256700123456" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking System -->
+    <section id="booking" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-primary mb-4">Make a Reservation</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Choose your preferred dining area and let us create the perfect atmosphere for your occasion</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Booking Form -->
+                <div class="card">
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-6">Book Your Table</h3>
+                    <form class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-text-primary mb-2">Full Name *</label>
+                                <input type="text" class="input-field" placeholder="Enter your full name" required />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-text-primary mb-2">Phone Number *</label>
+                                <input type="tel" class="input-field" placeholder="+256 700 123 456" required />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-text-primary mb-2">Email Address</label>
+                            <input type="email" class="input-field" placeholder="your.email@example.com" />
+                        </div>
+
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-text-primary mb-2">Date *</label>
+                                <input type="date" class="input-field" required />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-text-primary mb-2">Time *</label>
+                                <select class="input-field" required>
+                                    <option value>Select time</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="22:00">10:00 PM</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-text-primary mb-2">Party Size *</label>
+                                <select class="input-field" required>
+                                    <option value>Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                    <option value="9">9+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-text-primary mb-2">Dining Area Preference</label>
+                            <select class="input-field">
+                                <option value>Any Available</option>
+                                <option value="main">Main Restaurant</option>
+                                <option value="terrace">Outdoor Terrace</option>
+                                <option value="vip">VIP Section</option>
+                                <option value="private">Private Dining Room</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-text-primary mb-2">Special Requests</label>
+                            <textarea class="input-field h-24 resize-none" placeholder="Dietary restrictions, celebration setup, business meeting privacy, etc."></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="terms" class="mt-1 w-4 h-4 text-primary border-surface-300 rounded focus:ring-primary-300" />
+                            <label for="terms" class="text-sm text-text-secondary">I agree to the <a href="javascript:void(0)" class="text-primary hover:underline">cancellation policy</a> and confirm that the information provided is accurate.</label>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full">Confirm Reservation</button>
+                    </form>
+                </div>
+
+                <!-- Dining Areas -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-6">Choose Your Dining Experience</h3>
+                    
+                    <!-- Main Restaurant -->
+                    <div class="card hover-lift">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Main Restaurant" class="w-24 h-24 rounded-lg object-cover" onerror="this.src='https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="text-lg font-playfair font-bold text-primary mb-2">Main Restaurant</h4>
+                                <p class="text-text-secondary text-sm mb-2">Elegant indoor dining with live entertainment and full bar service</p>
+                                <div class="flex items-center gap-4 text-sm text-text-tertiary">
+                                    <span>Capacity: 80 guests</span>
+                                    <span class="text-success">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outdoor Terrace -->
+                    <div class="card hover-lift">
+                        <div class="flex gap-4">
+                            <img src="https://images.pixabay.com/photo/2016/11/18/14/39/restaurant-1834294_1280.jpg" alt="Outdoor Terrace" class="w-24 h-24 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="text-lg font-playfair font-bold text-primary mb-2">Outdoor Terrace</h4>
+                                <p class="text-text-secondary text-sm mb-2">Al fresco dining under the stars with garden views</p>
+                                <div class="flex items-center gap-4 text-sm text-text-tertiary">
+                                    <span>Capacity: 40 guests</span>
+                                    <span class="text-success">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIP Section -->
+                    <div class="card hover-lift">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="VIP Section" class="w-24 h-24 rounded-lg object-cover" onerror="this.src='https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="text-lg font-playfair font-bold text-primary mb-2">VIP Section</h4>
+                                <p class="text-text-secondary text-sm mb-2">Exclusive area with premium service and privacy</p>
+                                <div class="flex items-center gap-4 text-sm text-text-tertiary">
+                                    <span>Capacity: 20 guests</span>
+                                    <span class="text-warning">Limited</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Dining Room -->
+                    <div class="card hover-lift">
+                        <div class="flex gap-4">
+                            <img src="https://images.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_1280.jpg" alt="Private Dining Room" class="w-24 h-24 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="text-lg font-playfair font-bold text-primary mb-2">Private Dining Room</h4>
+                                <p class="text-text-secondary text-sm mb-2">Intimate space perfect for business meetings and celebrations</p>
+                                <div class="flex items-center gap-4 text-sm text-text-tertiary">
+                                    <span>Capacity: 12 guests</span>
+                                    <span class="text-success">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-primary mb-4">Meet Our Team</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">The passionate professionals dedicated to making your experience exceptional</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Head Chef -->
+                <div class="card text-center hover-lift">
+                    <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Chef Samuel Mukasa" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.src='https://images.pexels.com/photos/887827/pexels-photo-887827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Chef Samuel Mukasa</h3>
+                    <p class="text-secondary font-semibold mb-3">Head Chef</p>
+                    <p class="text-text-secondary text-sm mb-4">15+ years crafting exceptional cuisine, blending international techniques with local flavors</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">French Cuisine</span>
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">Local Fusion</span>
+                    </div>
+                </div>
+
+                <!-- Event Coordinator -->
+                <div class="card text-center hover-lift">
+                    <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Grace Nakato" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c6c1d8e0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Grace Nakato</h3>
+                    <p class="text-secondary font-semibold mb-3">Event Coordinator</p>
+                    <p class="text-text-secondary text-sm mb-4">Specialist in creating memorable celebrations and seamless corporate events</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">Event Planning</span>
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">Corporate Events</span>
+                    </div>
+                </div>
+
+                <!-- General Manager -->
+                <div class="card text-center hover-lift">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="David Ssemakula" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">David Ssemakula</h3>
+                    <p class="text-secondary font-semibold mb-3">General Manager</p>
+                    <p class="text-text-secondary text-sm mb-4">Ensuring exceptional service and maintaining the highest standards of hospitality</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">Operations</span>
+                        <span class="bg-surface px-3 py-1 rounded-full text-xs text-text-secondary">Guest Relations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Directions -->
+    <section class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-primary mb-4">Find Us</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Located in the heart of Kyengera, easily accessible from Kampala and surrounding areas</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Map Placeholder -->
+                <div class="card">
+                    <div class="bg-surface-200 h-80 rounded-lg flex items-center justify-center mb-6">
+                        <div class="text-center">
+                            <svg class="w-16 h-16 text-text-tertiary mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <p class="text-text-secondary">Interactive Map</p>
+                            <p class="text-sm text-text-tertiary">Kyengera, Wakiso District</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="btn-primary flex-1">Get Directions</button>
+                        <button class="btn-outline flex-1">Share Location</button>
+                    </div>
+                </div>
+
+                <!-- Location Details -->
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Address & Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-primary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">Lounge 44 Kyengera</p>
+                                    <p class="text-text-secondary">Plot 123, Kyengera Road</p>
+                                    <p class="text-text-secondary">Kyengera, Wakiso District, Uganda</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">+256 700 123 456</p>
+                                    <p class="text-text-secondary text-sm">Available 24/7 for reservations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">reservations@lounge44.ug</p>
+                                    <p class="text-text-secondary text-sm">For detailed event planning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Getting Here</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-secondary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">From Kampala City Center</p>
+                                    <p class="text-text-secondary text-sm">15 minutes via Masaka Road</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-secondary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">Parking Available</p>
+                                    <p class="text-text-secondary text-sm">Free secure parking for 50+ vehicles</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-secondary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-text-primary">Public Transport</p>
+                                    <p class="text-text-secondary text-sm">Accessible via taxi and boda boda</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Plan Your Visit</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Dress Code:</span>
+                                <span class="text-text-primary font-semibold">Smart Casual</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Peak Hours:</span>
+                                <span class="text-text-primary font-semibold">7:00 PM - 10:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Reservations:</span>
+                                <span class="text-text-primary font-semibold">Recommended</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Cancellation:</span>
+                                <span class="text-text-primary font-semibold">2 hours notice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact & Policies -->
+    <section class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Emergency Contact -->
+                <div class="card">
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-6">Emergency Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-error-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-error" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-primary">24/7 Emergency Line</p>
+                                <p class="text-error font-bold">+256 700 999 888</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-primary">Management</p>
+                                <p class="text-primary font-bold">+256 700 123 456</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policies -->
+                <div class="card">
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-6">Reservation Policies</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-text-primary mb-2">Cancellation Policy</h4>
+                            <p class="text-text-secondary">Reservations can be cancelled up to 2 hours before the scheduled time without penalty. Late cancellations may incur a service charge.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-primary mb-2">No-Show Policy</h4>
+                            <p class="text-text-secondary">Tables are held for 15 minutes past reservation time. No-shows may be charged a service fee for future bookings.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-primary mb-2">Group Reservations</h4>
+                            <p class="text-text-secondary">Parties of 8 or more require advance confirmation and may require a deposit. Special group menus available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white">
+        <div class="container-custom">
+            <div class="section-padding">
+                <div class="grid lg:grid-cols-4 gap-8">
+                    <!-- Brand -->
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center space-x-2 mb-6">
+                            <svg class="w-10 h-10 text-secondary" viewBox="0 0 40 40" fill="currentColor">
+                                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <text x="20" y="26" text-anchor="middle" class="text-sm font-bold fill-current">44</text>
+                            </svg>
+                            <span class="text-2xl font-playfair font-bold">Lounge 44</span>
+                        </div>
+                        <p class="text-primary-100 mb-6 max-w-md">Where exceptional cuisine meets unforgettable entertainment in the heart of Kyengera. Your destination for extraordinary experiences.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://x.com/yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300" aria-label="X (Twitter)">
+                                <i class="bi bi-twitter-x text-2xl"></i>
+                            </a>
+                            <a href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300" aria-label="TikTok">
+                                <i class="bi bi-tiktok text-2xl"></i>
+                            </a>
+                            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300" aria-label="Instagram">
+                                <i class="bi bi-instagram text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-lg font-playfair font-bold mb-6">Quick Links</h3>
+                        <ul class="space-y-3">
+                            <li><a href="homepage.html" class="text-primary-100 hover:text-secondary transition-colors duration-300">Home</a></li>
+                            <li><a href="menu_ordering.html" class="text-primary-100 hover:text-secondary transition-colors duration-300">Menu & Order</a></li>
+                            <li><a href="events_entertainment.html" class="text-primary-100 hover:text-secondary transition-colors duration-300">Events</a></li>
+                            <li><a href="gallery_experience.html" class="text-primary-100 hover:text-secondary transition-colors duration-300">Gallery</a></li>
+                            <li><a href="about_lounge_44.html" class="text-primary-100 hover:text-secondary transition-colors duration-300">About Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-lg font-playfair font-bold mb-6">Contact</h3>
+                        <div class="space-y-3">
+                            <p class="text-primary-100">Plot 123, Kyengera Road<br />Kyengera, Wakiso District</p>
+                            <p class="text-primary-100">+256 700 123 456</p>
+                            <p class="text-primary-100">reservations@lounge44.ug</p>
+                            <p class="text-primary-100">Open Daily: 11:00 AM - 2:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-primary-700 mt-12 pt-8 text-center">
+                    <p class="text-primary-100 text-sm">&copy; 2025 Lounge 44 Kyengera. All Rights Reserved. | Website developed by Arthur Creations.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your reservation! We will confirm your booking via SMS and WhatsApp within 15 minutes.');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

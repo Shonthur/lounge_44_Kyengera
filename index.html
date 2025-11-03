@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lounge 44 Digital Experience</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loader-container {
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .loading-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            border-radius: 2px;
+            animation: loading 3s ease-in-out forwards;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 107, 53, 0.8); }
+        }
+        
+        @keyframes loading {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        .fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flounge446254back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="logo">LOUNGE 44</div>
+        <div class="loading-text">Welcome to the Digital Experience</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect to about page after loading animation
+        setTimeout(function() {
+            document.getElementById('loader').classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = 'pages/about_lounge_44.html';
+            }, 500);
+        }, 3500);
+    </script>
+</body>
+</html>

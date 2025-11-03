@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Lounge 44</title>
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="min-h-screen flex flex-col" style="background: url('../drk2.jpg') no-repeat center center fixed; background-size: cover;">
+  <div class="min-h-screen bg-black/60 flex flex-col">
+    <!-- Topbar -->
+    <header class="bg-white/90 shadow flex items-center justify-between px-6 py-4 relative">
+      <h2 class="font-playfair text-2xl font-bold text-primary">Lounge 44 Admin Dashboard</h2>
+      <div class="flex items-center gap-4 relative">
+        <span class="text-sm text-gray-500">Welcome, Admin</span>
+        <!-- Profile dropdown -->
+        <div class="relative">
+          <button id="profile-btn" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold cursor-pointer">A</button>
+          <div id="profile-menu" class="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-200 hidden">
+            <ul class="py-2 text-sm text-gray-700">
+              <li><button id="profile-change-password" class="w-full text-left px-4 py-2 hover:bg-gray-100">Change Password</button></li>
+              <li><button id="profile-logout" class="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button></li>
+              <li><button id="profile-manage-users" class="w-full text-left px-4 py-2 hover:bg-gray-100">Manage Users</button></li>
+              <li><button id="profile-settings" class="w-full text-left px-4 py-2 hover:bg-gray-100">Settings</button></li>
+              <li><button id="profile-activity" class="w-full text-left px-4 py-2 hover:bg-gray-100">Activity Log</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Login Panel -->
+    <div id="login-area" class="flex-1 flex items-center justify-center">
+  <div class="w-full max-w-sm rounded-2xl shadow-2xl p-6 mt-12 border border-white/40 bg-white/5 backdrop-blur-md" style="background: rgba(30,30,40,0.12); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);">
+  <h2 class="font-playfair text-2xl font-bold mb-6 text-center text-white drop-shadow-lg">Admin Login</h2>
+        <form id="admin-login-form" class="space-y-4 flex flex-col items-center">
+          <input type="password" id="admin-password" class="input w-4/5 max-w-xs border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-4 py-2 transition-all duration-200" placeholder="Enter admin password" required />
+          <button type="submit" class="btn-primary w-3/5 max-w-xs mt-2">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard Panel -->
+    <div id="admin-panel" class="hidden flex-1 flex flex-col items-center justify-center py-8 overflow-y-auto h-full">
+  <div class="w-full flex flex-col md:flex-row gap-8 items-start justify-center">
+        <!-- Upload Section -->
+  <section id="gallery-section" class="w-full md:w-[24vw] min-w-[220px] max-w-[340px] rounded-2xl shadow-2xl p-6 border border-white/40 flex flex-col items-start backdrop-blur-md mt-8 mb-8 z-20 bg-white/5" style="background: rgba(30,30,40,0.12); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);">
+    <h3 class="font-playfair text-3xl font-bold mb-4 text-left tracking-wide text-white drop-shadow-lg">Upload Image</h3>
+          <form id="upload-form" class="w-full flex flex-col gap-2 items-center bg-white/5 rounded-xl border border-white/40 px-4 py-4 backdrop-blur-md" style="background: rgba(255,255,255,0.08);">
+            <div class="w-4/5 max-w-xs flex flex-col gap-2">
+              <label class="text-gray-200 font-medium mb-1" for="image-file">Image File</label>
+              <input type="file" id="image-file" accept="image/*" class="block w-full border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-3 py-2 transition-all duration-200" required />
+            </div>
+            <div class="w-4/5 max-w-xs flex flex-col gap-2">
+              <label class="text-gray-200 font-medium mb-1" for="image-title">Image Title / Dish Name</label>
+              <input type="text" id="image-title" class="block w-full border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-3 py-2 transition-all duration-200" placeholder="e.g. Grilled Chicken" required />
+            </div>
+            <div class="w-4/5 max-w-xs flex flex-col gap-2">
+              <label class="text-gray-200 font-medium mb-1" for="image-price">Price (optional)</label>
+              <input type="text" id="image-price" class="block w-full border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-3 py-2 transition-all duration-200" placeholder="e.g. 25000" />
+            </div>
+            <div class="w-4/5 max-w-xs flex flex-col gap-2">
+              <label class="text-gray-200 font-medium mb-1" for="image-details">Details (optional)</label>
+              <textarea id="image-details" class="block w-full border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-3 py-2 transition-all duration-200 resize-none min-h-[60px]" placeholder="e.g. Served with fries"></textarea>
+            </div>
+            <div class="w-4/5 max-w-xs flex flex-col gap-2">
+              <label class="text-gray-200 font-medium mb-1" for="target-page">Target Page</label>
+              <select id="target-page" class="block w-full border border-white/60 bg-white/20 text-gray-900 focus:border-white focus:ring-white/40 rounded-lg px-3 py-2 transition-all duration-200" required>
+                <option value="gallery">Gallery</option>
+                <option value="menu">Menu</option>
+                <option value="events">Events</option>
+              </select>
+            </div>
+            <button type="submit" style="background-color:#7c2d12;color:#fff;" class="w-3/5 max-w-xs mt-4 py-2 rounded-lg text-lg font-semibold shadow-lg hover:bg-primary focus:bg-primary transition-all duration-200">Upload</button>
+          </form>
+          <div id="upload-status" class="mt-6 text-left text-success-600 font-semibold"></div>
+        </section>
+
+        <!-- Page Previews -->
+        <aside class="hidden md:grid grid-cols-2 gap-6 md:w-[60vw] max-w-3xl min-w-[320px] mt-8 mb-8 md:block" style="display: grid;">
+          <div class="preview-card bg-white/80 rounded-2xl shadow-xl p-4 border border-primary/10 cursor-pointer" data-src="../homepage.html" data-title="Home Page Preview">
+            <h4 class="font-bold text-primary mb-2">Home Page Preview</h4>
+            <iframe src="../homepage.html" class="w-full h-48 rounded-lg border pointer-events-none" loading="lazy"></iframe>
+          </div>
+          <div class="preview-card bg-white/80 rounded-2xl shadow-xl p-4 border border-primary/10 cursor-pointer" data-src="../menu_ordering.html" data-title="Menu Page Preview">
+            <h4 class="font-bold text-primary mb-2">Menu Page Preview</h4>
+            <iframe src="../menu_ordering.html" class="w-full h-48 rounded-lg border pointer-events-none" loading="lazy"></iframe>
+          </div>
+          <div class="preview-card bg-white/80 rounded-2xl shadow-xl p-4 border border-primary/10 cursor-pointer" data-src="../events_entertainment.html" data-title="Events Page Preview">
+            <h4 class="font-bold text-primary mb-2">Events Page Preview</h4>
+            <iframe src="../events_entertainment.html" class="w-full h-48 rounded-lg border pointer-events-none" loading="lazy"></iframe>
+          </div>
+          <div class="preview-card bg-white/80 rounded-2xl shadow-xl p-4 border border-primary/10 cursor-pointer" data-src="../gallery_experience.html" data-title="Gallery Page Preview">
+            <h4 class="font-bold text-primary mb-2">Gallery Page Preview</h4>
+            <iframe src="../gallery_experience.html" class="w-full h-48 rounded-lg border pointer-events-none" loading="lazy"></iframe>
+          </div>
+          <!-- Modal for large preview -->
+          <div id="preview-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
+            <div class="relative bg-white rounded-3xl shadow-2xl p-2 md:p-6 w-[98vw] max-w-6xl h-[92vh] flex flex-col">
+              <button id="close-preview-modal" style="background-color:#dc2626;color:#fff;" class="absolute top-2 right-2 rounded-full w-8 h-8 flex items-center justify-center text-xl font-bold shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 z-50">&times;</button>
+              <h4 id="modal-title" class="font-bold text-primary mb-3 text-xl md:text-2xl text-center"></h4>
+              <iframe id="modal-iframe" src="" class="w-full flex-1 rounded-xl border min-h-[60vh]" loading="lazy"></iframe>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="change-password-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+  <div class="relative rounded-2xl shadow-2xl p-6 w-full max-w-sm border border-white/40 bg-white/5 backdrop-blur-md" style="background: rgba(30,30,40,0.12); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);">
+        <!-- Close button (fixed & visible) -->
+        <button id="close-change-password-modal"
+          style="background-color:#dc2626;color:#fff;" class="absolute top-0 right-0 w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-lg hover:bg-red-700 border-0 rounded-none">
+          &times;
+        </button>
+  <h3 class="font-bold text-white mb-4 text-center drop-shadow-lg">Change Password</h3>
+        <form id="change-password-form" class="space-y-4 flex flex-col items-center">
+          <input type="password" id="old-password" class="input w-4/5 max-w-xs border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-4 py-2 transition-all duration-200" placeholder="Current password" required />
+          <input type="password" id="new-password" class="input w-4/5 max-w-xs border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-4 py-2 transition-all duration-200" placeholder="New password" required />
+          <input type="password" id="confirm-password" class="input w-4/5 max-w-xs border border-white/60 bg-white/20 text-gray-900 placeholder-gray-400 focus:border-white focus:ring-white/40 rounded-lg px-4 py-2 transition-all duration-200" placeholder="Confirm new password" required />
+          <button type="submit" class="btn-primary w-3/5 max-w-xs mt-2">Update Password</button>
+        </form>
+        <div id="change-password-status" class="mt-2 text-center text-sm"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function getAdminPassword() {
+      return localStorage.getItem('l44_admin_password') || 'admin123';
+    }
+    function setAdminPassword(newPw) {
+      localStorage.setItem('l44_admin_password', newPw);
+    }
+
+    const loginArea = document.getElementById('login-area');
+    const adminPanel = document.getElementById('admin-panel');
+
+    // Profile menu toggle
+    const profileBtn = document.getElementById('profile-btn');
+    const profileMenu = document.getElementById('profile-menu');
+    profileBtn.addEventListener('click', () => {
+      profileMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+        profileMenu.classList.add('hidden');
+      }
+    });
+
+    // Change Password Modal
+    const changeModal = document.getElementById('change-password-modal');
+    const closeChangeModal = document.getElementById('close-change-password-modal');
+    const changeForm = document.getElementById('change-password-form');
+    const changeStatus = document.getElementById('change-password-status');
+
+    function openChangePasswordModal() {
+      changeModal.classList.remove('hidden');
+      changeStatus.textContent = '';
+      changeForm.reset();
+    }
+
+    closeChangeModal.addEventListener('click', function() {
+      changeModal.classList.add('hidden');
+      changeStatus.textContent = '';
+    });
+
+    changeForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const oldPw = document.getElementById('old-password').value;
+      const newPw = document.getElementById('new-password').value;
+      const confirmPw = document.getElementById('confirm-password').value;
+
+      if (oldPw !== getAdminPassword()) {
+        changeStatus.textContent = 'Current password is incorrect.';
+        changeStatus.className = 'mt-2 text-center text-sm text-red-600';
+        return;
+      }
+      if (newPw.length < 4) {
+        changeStatus.textContent = 'New password must be at least 4 characters.';
+        changeStatus.className = 'mt-2 text-center text-sm text-red-600';
+        return;
+      }
+      if (newPw !== confirmPw) {
+        changeStatus.textContent = 'New passwords do not match.';
+        changeStatus.className = 'mt-2 text-center text-sm text-red-600';
+        return;
+      }
+      setAdminPassword(newPw);
+      changeStatus.textContent = 'Password updated successfully!';
+      changeStatus.className = 'mt-2 text-center text-sm text-green-600';
+    });
+
+    // Profile menu actions
+    document.getElementById('profile-change-password').addEventListener('click', () => {
+      profileMenu.classList.add('hidden');
+      openChangePasswordModal();
+    });
+
+    document.getElementById('profile-logout').addEventListener('click', () => {
+      adminPanel.classList.add('hidden');
+      loginArea.classList.remove('hidden');
+      profileMenu.classList.add('hidden');
+    });
+
+    // placeholders for new features
+    document.getElementById('profile-manage-users').addEventListener('click', () => {
+      alert('Manage Users feature coming soon!');
+      profileMenu.classList.add('hidden');
+    });
+    document.getElementById('profile-settings').addEventListener('click', () => {
+      alert('Settings feature coming soon!');
+      profileMenu.classList.add('hidden');
+    });
+    document.getElementById('profile-activity').addEventListener('click', () => {
+      alert('Activity Log feature coming soon!');
+      profileMenu.classList.add('hidden');
+    });
+
+    // Login
+    document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pw = document.getElementById('admin-password').value;
+      if (pw === getAdminPassword()) {
+        loginArea.classList.add('hidden');
+        adminPanel.classList.remove('hidden');
+      } else {
+        alert('Incorrect password!');
+      }
+    });
+  });
+  </script>
+</body>
+</html>

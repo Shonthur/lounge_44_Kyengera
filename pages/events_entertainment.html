@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Entertainment - Lounge 44 Kyengera</title>
+    <meta name="description" content="Experience Kyengera's premier entertainment destination. Live performances, DJ nights, cultural celebrations at Lounge 44." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flounge446254back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation with Contextual Intelligence -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-subtle sticky top-0 z-50" id="main-nav">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <text x="20" y="26" text-anchor="middle" class="text-sm font-bold fill-current">44</text>
+                    </svg>
+                    <span class="text-2xl font-playfair font-bold text-primary">Lounge 44</span>
+                </div>
+
+                <!-- Desktop Navigation with Contextual Content -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="menu_ordering.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
+                    <a href="events_entertainment.html" class="text-primary font-semibold">Events</a>
+                    <a href="gallery_experience.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
+                    <a href="about_lounge_44.html" class="text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden" id="mobile-menu">
+                <div class="py-4 space-y-4 border-t border-surface-300">
+                    <a href="homepage.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="menu_ordering.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
+                    <a href="events_entertainment.html" class="block text-primary font-semibold">Events</a>
+                    <a href="gallery_experience.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
+                    <a href="about_lounge_44.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] min-h-[420px] flex items-center justify-center overflow-hidden pb-32">
+        <div class="absolute inset-0">
+            <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Live entertainment at Lounge 44" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="relative z-10 h-full flex items-center justify-center text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h1 class="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">
+                    Live the <span class="text-gradient-gold">Experience</span>
+                </h1>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Kyengera's premier entertainment destination featuring live performances, cultural celebrations, and unforgettable nights
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 md:mb-20">
+                    <button class="btn-primary">View Upcoming Events</button>
+                    <button class="btn-secondary">Book VIP Table</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Filters -->
+    <section class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <h2 class="font-playfair text-3xl font-bold text-primary">Upcoming Events</h2>
+                <div class="flex items-center space-x-4">
+                    <button class="flex items-center space-x-2 px-4 py-2 bg-white rounded-lg shadow-card hover:shadow-subtle transition-all duration-300">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                        </svg>
+                        <span class="text-text-primary">Filter Events</span>
+                    </button>
+                    <button class="flex items-center space-x-2 px-4 py-2 text-text-secondary hover:text-primary transition-colors duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Tags -->
+            <div class="flex flex-wrap gap-3 mb-8">
+                <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">All Events</button>
+                <button class="px-4 py-2 bg-white text-text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300">Live Music</button>
+                <button class="px-4 py-2 bg-white text-text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300">DJ Nights</button>
+                <button class="px-4 py-2 bg-white text-text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300">Cultural</button>
+                <button class="px-4 py-2 bg-white text-text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300">Private Events</button>
+                <button class="px-4 py-2 bg-white text-text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300">This Weekend</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Featured Event -->
+                <div class="lg:col-span-2">
+                    <div class="card hover-lift overflow-hidden">
+                        <div class="relative h-80 mb-6">
+                            <img src="https://images.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Live jazz performance" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-secondary font-semibold">Saturday, August 31, 2025</span>
+                                <span class="text-text-secondary">8:00 PM - 12:00 AM</span>
+                            </div>
+                            <h3 class="font-playfair text-2xl font-bold text-primary">Jazz Under the Stars</h3>
+                            <p class="text-text-secondary leading-relaxed">
+                                Experience an enchanting evening of smooth jazz with Uganda's finest musicians. Featuring Sarah Nakamya and the Kampala Jazz Ensemble in an intimate outdoor setting.
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sarah Nakamya" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c0763c5c?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                    <span class="text-sm text-text-primary font-medium">Sarah Nakamya</span>
+                                </div>
+                                <span class="text-text-tertiary">•</span>
+                                <span class="text-sm text-text-secondary">Jazz • Live Performance</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-4">
+                                <div class="flex items-center space-x-4">
+                                    <span class="text-lg font-bold text-primary">From UGX 50,000</span>
+                                    <span class="text-sm text-text-secondary">per person</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <button class="btn-outline text-sm px-4 py-2">View Details</button>
+                                    <button class="btn-primary text-sm px-4 py-2">Book Table</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events Sidebar -->
+                <div class="space-y-6">
+                    <h3 class="font-playfair text-xl font-bold text-primary">Coming Up</h3>
+                    
+                    <!-- Event Card 1 -->
+                    <div class="card hover-lift">
+                        <div class="flex space-x-4">
+                            <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                <img src="Red Pulse Party.jpg" alt="DJ Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1571266028243-d220c9c3b2d2?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs text-secondary font-semibold">Sep 7, 2025</span>
+                                    <span class="text-xs text-text-secondary">9:00 PM</span>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1 truncate">Afrobeats Night</h4>
+                                <p class="text-sm text-text-secondary mb-2">DJ Kenzo spinning the hottest tracks</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-bold text-primary">UGX 30,000</span>
+                                    <button class="text-xs text-primary hover:text-primary-700 font-medium">Book →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Card 2 -->
+                    <div class="card hover-lift">
+                        <div class="flex space-x-4">
+                            <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg" alt="Cultural Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs text-secondary font-semibold">Sep 14, 2025</span>
+                                    <span class="text-xs text-text-secondary">7:00 PM</span>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1 truncate">Cultural Heritage Night</h4>
+                                <p class="text-sm text-text-secondary mb-2">Traditional music & dance</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-bold text-primary">UGX 40,000</span>
+                                    <button class="text-xs text-primary hover:text-primary-700 font-medium">Book →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Card 3 -->
+                    <div class="card hover-lift">
+                        <div class="flex space-x-4">
+                            <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                <img src="https://images.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg" alt="Live Band" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs text-secondary font-semibold">Sep 21, 2025</span>
+                                    <span class="text-xs text-text-secondary">8:30 PM</span>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1 truncate">Rock the Lounge</h4>
+                                <p class="text-sm text-text-secondary mb-2">The Kampala Rockers live</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-bold text-primary">UGX 45,000</span>
+                                    <button class="text-xs text-primary hover:text-primary-700 font-medium">Book →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Layout & Seating -->
+    <section class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-primary mb-4">Choose Your Perfect Spot</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                    Interactive venue layout with pricing tiers for every preference
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Venue Layout Visualization -->
+                <div class="relative">
+                    <div class="bg-white rounded-2xl p-8 shadow-prominent">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-6 text-center">Venue Layout</h3>
+                        
+                        <!-- Stage Area -->
+                        <div class="relative bg-gradient-to-r from-primary to-accent rounded-lg p-4 mb-6">
+                            <div class="text-center text-white">
+                                <svg class="w-8 h-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg>
+                                <span class="font-semibold">Main Stage</span>
+                            </div>
+                        </div>
+
+                        <!-- Seating Areas -->
+                        <div class="grid grid-cols-3 gap-4 mb-4">
+                            <!-- VIP Section -->
+                            <div class="bg-secondary/20 rounded-lg p-3 text-center cursor-pointer hover:bg-secondary/30 transition-colors duration-300">
+                                <div class="w-6 h-6 bg-secondary rounded mx-auto mb-2"></div>
+                                <span class="text-xs font-medium text-text-primary">VIP Tables</span>
+                                <div class="text-xs text-text-secondary mt-1">UGX 80,000</div>
+                            </div>
+                            
+                            <!-- Premium Section -->
+                            <div class="bg-accent/20 rounded-lg p-3 text-center cursor-pointer hover:bg-accent/30 transition-colors duration-300">
+                                <div class="w-6 h-6 bg-accent rounded mx-auto mb-2"></div>
+                                <span class="text-xs font-medium text-text-primary">Premium</span>
+                                <div class="text-xs text-text-secondary mt-1">UGX 60,000</div>
+                            </div>
+                            
+                            <!-- Regular Section -->
+                            <div class="bg-primary/20 rounded-lg p-3 text-center cursor-pointer hover:bg-primary/30 transition-colors duration-300">
+                                <div class="w-6 h-6 bg-primary rounded mx-auto mb-2"></div>
+                                <span class="text-xs font-medium text-text-primary">Regular</span>
+                                <div class="text-xs text-text-secondary mt-1">UGX 40,000</div>
+                            </div>
+                        </div>
+
+                        <!-- Bar Area -->
+                        <div class="bg-surface-300 rounded-lg p-3 text-center mb-4">
+                            <svg class="w-6 h-6 mx-auto mb-2 text-text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5,4V7H10.5V19H13.5V7H19V4H5Z"/>
+                            </svg>
+                            <span class="text-sm font-medium text-text-primary">Bar & Lounge Area</span>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="flex justify-center space-x-4 text-xs">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-3 h-3 bg-success rounded"></div>
+                                <span class="text-text-secondary">Available</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <div class="w-3 h-3 bg-warning rounded"></div>
+                                <span class="text-text-secondary">Limited</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <div class="w-3 h-3 bg-error rounded"></div>
+                                <span class="text-text-secondary">Sold Out</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seating Options -->
+                <div class="space-y-6">
+                    <h3 class="font-playfair text-2xl font-bold text-primary">Seating Options</h3>
+                    
+                    <!-- VIP Package -->
+                    <div class="card hover-lift border-2 border-secondary/30">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5,16L3,5H1V3H4L6,14H18L20,7H8L7.5,5H22L19,17H6L5,16Z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-playfair text-xl font-bold text-primary mb-2">VIP Experience</h4>
+                                <p class="text-text-secondary mb-3">Premium front-row tables with dedicated service, complimentary appetizers, and priority bar access.</p>
+                                <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                                    <li>• Best stage view</li>
+                                    <li>• Dedicated server</li>
+                                    <li>• Complimentary welcome drinks</li>
+                                    <li>• Reserved parking</li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-primary">UGX 80,000</span>
+                                    <button class="btn-secondary">Select VIP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="card hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-playfair text-xl font-bold text-primary mb-2">Premium Seating</h4>
+                                <p class="text-text-secondary mb-3">Elevated seating with excellent stage views and priority service.</p>
+                                <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                                    <li>• Great stage visibility</li>
+                                    <li>• Faster service</li>
+                                    <li>• Comfortable seating</li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-primary">UGX 60,000</span>
+                                    <button class="btn-outline">Select Premium</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Package -->
+                    <div class="card hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16,17V19H2V17S2,13 9,13 16,17 16,17M12.5,7.5A3.5,3.5 0 0,1 9,11A3.5,3.5 0 0,1 5.5,7.5A3.5,3.5 0 0,1 9,4A3.5,3.5 0 0,1 12.5,7.5M15.94,13A5.32,5.32 0 0,1 18,17V19H22V17S22,13.37 15.94,13M15,4A3.39,3.39 0 0,1 16.5,7.5A3.39,3.39 0 0,1 15,11A3.39,3.39 0 0,1 13.5,7.5A3.39,3.39 0 0,1 15,4Z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-playfair text-xl font-bold text-primary mb-2">Regular Seating</h4>
+                                <p class="text-text-secondary mb-3">Comfortable general seating with full access to all amenities.</p>
+                                <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                                    <li>• Good stage view</li>
+                                    <li>• Full bar access</li>
+                                    <li>• Dance floor access</li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-primary">UGX 40,000</span>
+                                    <button class="btn-outline">Select Regular</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Gallery -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-primary mb-4">Memorable Nights</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                    Relive the magic through our gallery of unforgettable performances and celebrations
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="disco.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1" style="color: white;">Jazz Night Spectacular</h3>
+                            <p class="text-sm opacity-90">August 15, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="serve.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1"  style="color: white;">Afrobeats Explosion</h3>
+                            <p class="text-sm opacity-90">August 10, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="people.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1" style="color: white;">Cultural Heritage Night</h3>
+                            <p class="text-sm opacity-90">August 5, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="../vid1.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1"  style="color: white;">Rock the Night</h3>
+                            <p class="text-sm opacity-90">July 28, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="wmn.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1" style="color: white;">Corporate Celebration</h3>
+                            <p class="text-sm opacity-90">July 20, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-xl hover-lift">
+                    <div class="aspect-square">
+                        <video src="date.mp4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-playfair text-lg font-bold mb-1" style="color: white;">Acoustic Sessions</h3>
+                            <p class="text-sm opacity-90">July 15, 2025</p>
+                        </div>
+                    </div>
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button class="btn-outline" id="show-gallery-btn">View Full Gallery</button>
+            </div>
+            <!-- Hidden Full Gallery Grid -->
+            <div id="memorable-gallery" class="hidden mt-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="../img.jpg" class="w-full h-full object-cover" alt="Gallery 1" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="../img1.jpg" class="w-full h-full object-cover" alt="Gallery 2" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="../img2.jpg" class="w-full h-full object-cover" alt="Gallery 3" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="../img3.jpg" class="w-full h-full object-cover" alt="Gallery 4" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="../Night Party_09.jpg" class="w-full h-full object-cover" alt="Gallery 5" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
+                        <img src="Red Pulse Party.jpg" class="w-full h-full object-cover" alt="Gallery 5" />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Booking Portal -->
+    <section class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="font-playfair text-4xl font-bold text-primary mb-4">Perform at Lounge 44</h2>
+                    <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                        Join Uganda's vibrant music scene. Submit your performance proposal and become part of our entertainment family.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Artist Benefits -->
+                    <div class="space-y-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary">Why Perform Here?</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary mb-2">Professional Sound System</h4>
+                                    <p class="text-text-secondary">State-of-the-art audio equipment and professional lighting setup for optimal performance quality.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M16,17V19H2V17S2,13 9,13 16,17 16,17M12.5,7.5A3.5,3.5 0 0,1 9,11A3.5,3.5 0 0,1 5.5,7.5A3.5,3.5 0 0,1 9,4A3.5,3.5 0 0,1 12.5,7.5M15.94,13A5.32,5.32 0 0,1 18,17V19H22V17S22,13.37 15.94,13M15,4A3.39,3.39 0 0,1 16.5,7.5A3.39,3.39 0 0,1 15,11A3.39,3.39 0 0,1 13.5,7.5A3.39,3.39 0 0,1 15,4Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary mb-2">Engaged Audience</h4>
+                                    <p class="text-text-secondary">Perform for music-loving crowds who appreciate quality entertainment and support local artists.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M7,10L12,6L17,10V18H15V12H9V18H7V10Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary mb-2">Marketing Support</h4>
+                                    <p class="text-text-secondary">Professional promotion across our social media channels and local entertainment networks.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M11,8C11,9.1 10.1,10 9,10S7,9.1 7,8 7.9,6 9,6 11,6.9 11,8M9,2A6,6 0 0,1 15,8C15,10.22 13.79,14.16 9,18.5C4.21,14.16 1,10.22 1,8A6,6 0 0,1 9,2M9,4A4,4 0 0,0 5,8C5,9.25 6.22,12.28 9,15.7C11.78,12.28 13,9.25 13,8A4,4 0 0,0 9,4Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary mb-2">Prime Location</h4>
+                                    <p class="text-text-secondary">Kyengera's most popular entertainment venue with excellent accessibility and parking.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div class="card">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-6">Submit Your Proposal</h3>
+                        
+                        <form class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Artist/Band Name</label>
+                                    <input type="text" class="input-field" placeholder="Your stage name" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Contact Number</label>
+                                    <input type="tel" class="input-field" placeholder="+256 XXX XXX XXX" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                                <input type="email" class="input-field" placeholder="your.email@example.com" />
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Music Genre</label>
+                                    <select class="input-field">
+                                        <option>Select Genre</option>
+                                        <option>Jazz</option>
+                                        <option>Afrobeats</option>
+                                        <option>Rock</option>
+                                        <option>R&B/Soul</option>
+                                        <option>Traditional</option>
+                                        <option>Acoustic</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Performance Type</label>
+                                    <select class="input-field">
+                                        <option>Select Type</option>
+                                        <option>Solo Performance</option>
+                                        <option>Band (2-4 members)</option>
+                                        <option>Large Band (5+ members)</option>
+                                        <option>DJ Set</option>
+                                        <option>Cultural Performance</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Performance Description</label>
+                                <textarea class="input-field h-24 resize-none" placeholder="Tell us about your music style, experience, and what makes your performance unique..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Social Media/Portfolio Links</label>
+                                <input type="url" class="input-field" placeholder="YouTube, Instagram, SoundCloud, etc." />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Preferred Performance Dates</label>
+                                <input type="text" class="input-field" placeholder="Any specific dates or general availability" />
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="terms" class="mt-1 w-4 h-4 text-primary border-surface-300 rounded focus:ring-primary-300" />
+                                <label for="terms" class="text-sm text-text-secondary">
+                                    I agree to the <a href="javascript:void(0)" class="text-primary hover:text-primary-700">performance terms</a> and understand that this is a proposal subject to review and approval.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full">Submit Proposal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-primary mb-4">What to Expect</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                    Hear from our guests about the unforgettable experiences at Lounge 44
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card hover-lift text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Customer testimonial" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c0763c5c?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                    </div>
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4 italic">
+                        "The sound quality is incredible and the atmosphere is electric. Every performance feels intimate yet grand. It's become our go-to spot for date nights."
+                    </p>
+                    <h4 class="font-semibold text-text-primary">Sarah Nakamya</h4>
+                    <p class="text-sm text-text-secondary">Regular Guest</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card hover-lift text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Customer testimonial" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                    </div>
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4 italic">
+                        "I've hosted three corporate events here and each time exceeded expectations. The team is professional and the venue adapts perfectly to any occasion."
+                    </p>
+                    <h4 class="font-semibold text-text-primary">James Mukasa</h4>
+                    <p class="text-sm text-text-secondary">Event Organizer</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card hover-lift text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Customer testimonial" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                    </div>
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4 italic">
+                        "The cultural nights are phenomenal! It's wonderful to see local talent showcased in such a beautiful setting. The food and drinks are exceptional too."
+                    </p>
+                    <h4 class="font-semibold text-text-primary">Grace Namuli</h4>
+                    <p class="text-sm text-text-secondary">Culture Enthusiast</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding bg-gradient-to-r from-primary to-accent">
+        <div class="container-custom text-center">
+            <h2 class="font-playfair text-4xl font-bold text-white mb-4">Ready for an Unforgettable Night?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Join us for exceptional entertainment, delicious cuisine, and memories that last a lifetime
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-surface-100 transition-all duration-300 shadow-prominent">
+                    Book Your Table Now
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+                    View Full Calendar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                            <span class="text-white font-playfair font-bold text-xl">L44</span>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair font-bold text-xl">Lounge 44</h3>
+                            <p class="text-sm text-white/70">Kyengera</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-4">
+                        Where exceptional cuisine meets unforgettable entertainment in the heart of Kyengera.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/lounge44kyengera" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="bi bi-twitter-x" style="font-size: 1.25rem;"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@lounge44kyengera" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="bi bi-tiktok" style="font-size: 1.25rem;"></i>
+                        </a>
+                        <a href="https://instagram.com/lounge44kyengera" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="bi bi-instagram" style="font-size: 1.25rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="homepage.html" class="text-white/80 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="menu_ordering.html" class="text-white/80 hover:text-white transition-colors duration-300">Menu & Ordering</a></li>
+                        <li><a href="events_entertainment.html" class="text-white/80 hover:text-white transition-colors duration-300">Events</a></li>
+                        <li><a href="gallery_experience.html" class="text-white/80 hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="reservations_contact.html" class="text-white/80 hover:text-white transition-colors duration-300">Reservations</a></li>
+                        <li><a href="about_lounge_44.html" class="text-white/80 hover:text-white transition-colors duration-300">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Live Entertainment</a></li>
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Private Events</a></li>
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Corporate Meetings</a></li>
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Food Delivery</a></li>
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Catering Services</a></li>
+                        <li><a href="javascript:void(0)" class="text-white/80 hover:text-white transition-colors duration-300">Artist Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                            </svg>
+                            <p class="text-white/80">Kyengera Town, Wakiso District, Uganda</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                            </svg>
+                            <p class="text-white/80">+256 700 123 456</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            <p class="text-white/80">info@lounge44.ug</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                            </svg>
+                            <div class="text-white/80">
+                                <p>Mon-Thu: 5:00 PM - 12:00 AM</p>
+                                <p>Fri-Sun: 5:00 PM - 2:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-white/60">© 2025 This website and all its content are the property of Arthur Creations. It is not yet transferred or sold to Lounge 44 Kyengera. No part may be reproduced without the written permission of Arthur Creations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-prominent');
+            } else {
+                nav.classList.remove('shadow-prominent');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, .section-padding > div > *').forEach(el => {
+            observer.observe(el);
+        });
+    // Show full gallery on button click
+    document.getElementById('show-gallery-btn')?.addEventListener('click', function() {
+        const gallery = document.getElementById('memorable-gallery');
+        if (gallery) {
+            gallery.classList.toggle('hidden');
+            gallery.scrollIntoView({behavior:'smooth'});
+        }
+    });
+    </script>
+</body>
+</html>

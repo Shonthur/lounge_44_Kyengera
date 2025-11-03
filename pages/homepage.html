@@ -1,0 +1,843 @@
+        <!-- Mobile Sticky Book Now CTA -->
+        <div id="mobile-reserve-cta" class="fixed bottom-0 left-0 right-0 z-60 bg-gradient-to-r from-primary to-accent p-4 flex items-center justify-between lg:hidden" style="display:none;">
+            <div class="text-white">
+                <p class="font-semibold">Reserve Your Table</p>
+                <p class="text-sm text-white/80">Book for tonight</p>
+            </div>
+            <a href="reservations_contact.html" class="bg-white text-primary px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                Book Now
+            </a>
+        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lounge 44 - Kyengera's Premier Lifestyle Destination</title>
+    <meta name="description" content="Experience sophistication at Lounge 44 Kyengera - exceptional cuisine, live entertainment, and warm hospitality. Book your table today for an unforgettable evening." />
+    <meta name="keywords" content="Lounge 44, Kyengera restaurant, fine dining, live entertainment, Uganda hospitality" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flounge446254back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation with Contextual Intelligence -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-subtle sticky top-0 z-50" id="main-nav">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <text x="20" y="26" text-anchor="middle" class="text-sm font-bold fill-current">44</text>
+                    </svg>
+                    <span class="text-2xl font-playfair font-bold text-primary">Lounge 44</span>
+                </div>
+
+                <!-- Desktop Navigation with Contextual Content -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-primary font-semibold">Home</a>
+                    <a href="menu_ordering.html" class="text-text-secondary hover:text-primary transition-colors duration-300" id="menu-link">Menu & Order</a>
+                    <a href="events_entertainment.html" class="text-text-secondary hover:text-primary transition-colors duration-300" id="events-link">Events</a>
+                    <a href="gallery_experience.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
+                    <a href="about_lounge_44.html" class="text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden" id="mobile-menu">
+                <div class="py-4 space-y-4 border-t border-surface-300">
+                    <a href="homepage.html" class="block text-primary font-semibold">Home</a>
+                    <a href="menu_ordering.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
+                    <a href="events_entertainment.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Events</a>
+                    <a href="gallery_experience.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="reservations_contact.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
+                    <a href="about_lounge_44.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Floating Reservation Widget (Desktop) -->
+            <div class="fixed bottom-6 right-0 z-60 hidden lg:block transition-transform duration-500 ease-in-out translate-x-full" id="reservation-widget">
+                <!-- Reservation Tab (slides with widget) -->
+                <button id="reservation-tab" class="absolute top-1/2 -left-10 z-[9999] bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer opacity-100 transition-opacity duration-300 animate-pulse-tab" style="transform: translateY(-50%);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div class="bg-white rounded-2xl shadow-prominent p-6 w-80 relative">
+                <h3 class="font-playfair text-lg font-bold text-primary mb-4">Quick Reservation</h3>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-sm text-text-secondary mb-1 block">Date</label>
+                            <input type="date" class="w-full px-3 py-2 border border-surface-300 rounded-lg text-sm" id="reservation-date" />
+                        </div>
+                        <div>
+                            <label class="text-sm text-text-secondary mb-1 block">Time</label>
+                            <select class="w-full px-3 py-2 border border-surface-300 rounded-lg text-sm" id="reservation-time">
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-sm text-text-secondary mb-1 block">Party Size</label>
+                        <select class="w-full px-3 py-2 border border-surface-300 rounded-lg text-sm" id="reservation-size">
+                            <option value="2">2 People</option>
+                            <option value="4">4 People</option>
+                            <option value="6">6 People</option>
+                            <option value="8">8+ People</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-success font-semibold" id="availability-status">✓ Tables Available</span>
+                        <span class="text-text-tertiary">Real-time</span>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-lg font-semibold hover:shadow-glow-primary transition-all duration-300">
+                        Book Tonight
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Tab to reopen widget (outside widget so always visible) -->
+
+
+    <!-- Hero Section with Immersive Video -->
+    <section class="relative h-screen overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" style="object-fit: cover;" src="../vid.mp4"></video>
+            <!-- Animated overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 h-full flex items-center">
+            <div class="container-custom">
+                <div class="max-w-4xl">
+                    <h1 class="font-playfair text-5xl lg:text-7xl font-bold text-white mb-6 fade-in">
+                        Where <span class="text-secondary">Sophistication</span><br />
+                        Meets <span class="text-accent">Entertainment</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed fade-in">
+                        Experience Kyengera's premier lifestyle destination with exceptional cuisine, live entertainment, and unforgettable moments.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 fade-in">
+                        <a href="reservations_contact.html" class="btn-primary inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-glow-primary">
+                            <span>Reserve Your Table</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="menu_ordering.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary">
+                            Explore Menu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Live Events Ticker -->
+     <div class="bg-gradient-to-r from-primary to-accent text-white py-3 overflow-hidden">
+         <div class="relative w-full">
+             <div class="ticker-track flex items-center space-x-8 whitespace-nowrap will-change-transform" style="animation: ticker-scroll 28s linear infinite;">
+                 <div class="flex items-center space-x-8" id="events-ticker">
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-secondary rounded-full animate-pulse-subtle"></span>
+                         <span class="font-semibold">LIVE NOW:</span>
+                         <span id="current-event">Jazz Trio Performance - Main Lounge</span>
+                     </div>
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-accent-300 rounded-full"></span>
+                         <span class="font-semibold">TONIGHT:</span>
+                         <span id="tonight-event">Acoustic Sessions with Local Artists - 8:30 PM</span>
+                     </div>
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                         <span class="font-semibold">THIS WEEK:</span>
+                         <span>Weekend Wine Tasting | Saturday Open Mic | Sunday Brunch</span>
+                     </div>
+                 </div>
+                 <!-- Duplicate for seamless loop -->
+                 <div class="flex items-center space-x-8" aria-hidden="true">
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-secondary rounded-full animate-pulse-subtle"></span>
+                         <span class="font-semibold">LIVE NOW:</span>
+                         <span>Jazz Trio Performance - Main Lounge</span>
+                     </div>
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-accent-300 rounded-full"></span>
+                         <span class="font-semibold">TONIGHT:</span>
+                         <span>Acoustic Sessions with Local Artists - 8:30 PM</span>
+                     </div>
+                     <div class="flex items-center space-x-2 whitespace-nowrap">
+                         <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                         <span class="font-semibold">THIS WEEK:</span>
+                         <span>Weekend Wine Tasting | Saturday Open Mic | Sunday Brunch</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+                <style>
+                @media (min-width: 1024px) {
+                    body {
+                        overflow-x: hidden;
+                        padding-bottom: 32px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        scrollbar-width: none; /* Firefox */
+                    }
+                    body::-webkit-scrollbar {
+                        display: none; /* Chrome, Safari, Opera */
+                    }
+                    #reservation-widget.open {
+                        transform: translateX(0);
+                    }
+                    #reservation-widget.closed {
+                        transform: translateX(100%);
+                    }
+                        #reservation-tab {
+                            opacity: 0.85;
+                            pointer-events: auto;
+                            z-index: 9999;
+                            display: flex !important;
+                            position: absolute;
+                            top: 50%;
+                            left: -40px;
+                            transform: translateY(-50%);
+                            width: 48px;
+                            height: 48px;
+                            border-radius: 9999px;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+                            animation: pulse-tab 1.5s infinite;
+                        }
+                        @keyframes pulse-tab {
+                            0% { box-shadow: 0 0 0 0 rgba(139,92,246,0.7); }
+                            70% { box-shadow: 0 0 0 12px rgba(139,92,246,0); }
+                            100% { box-shadow: 0 0 0 0 rgba(139,92,246,0); }
+                        }
+                }
+                @keyframes ticker-scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .ticker-track {
+                    min-width: 200%;
+                    animation-duration: 28s;
+                }
+                @media (max-width: 640px) {
+                    .ticker-track {
+                        animation-duration: 14s;
+                    }
+                }
+            </style>
+        <!-- Dynamic Content Grid -->
+    <section class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-6">Today's Highlights</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Fresh culinary creations, live entertainment, and signature experiences crafted just for today
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Chef's Specials -->
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=2940&auto=format&fit=crop" alt="Chef's Special" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg';" />
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">Chef's Special</span>
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-primary mb-3">Ugandan Fusion Platter</h3>
+                    <p class="text-text-secondary mb-4">
+                        Contemporary interpretation of traditional flavors featuring locally sourced tilapia with matooke gratin and groundnut reduction.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-accent">85,000 UGX</span>
+                        <a href="menu_ordering.html" class="text-secondary font-semibold hover:text-secondary-600 transition-colors">Order Now →</a>
+                    </div>
+                </div>
+
+                <!-- Live Performance Preview -->
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop" alt="Live Performance" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg';" />
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Live Tonight</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-primary mb-3">The Kampala Collective</h3>
+                    <p class="text-text-secondary mb-4">
+                        Award-winning jazz ensemble bringing contemporary sounds to classic favorites. Join us for an intimate evening of music and sophistication.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold text-primary">8:30 PM - 11:00 PM</span>
+                        <a href="events_entertainment.html" class="text-secondary font-semibold hover:text-secondary-600 transition-colors">View Schedule →</a>
+                    </div>
+                </div>
+
+                <!-- Featured Cocktail -->
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=2940&auto=format&fit=crop" alt="Signature Cocktail" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/616836/pexels-photo-616836.jpeg';" />
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Signature Creation</span>
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-primary mb-3">Kyengera Sunset</h3>
+                    <p class="text-text-secondary mb-4">
+                        Our mixologist's latest creation featuring locally distilled gin, passion fruit, and a hint of Uganda vanilla. A perfect harmony of flavors.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-accent">25,000 UGX</span>
+                        <a href="menu_ordering.html" class="text-secondary font-semibold hover:text-secondary-600 transition-colors">Try Tonight →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Lounge 44 with Parallax -->
+    <section class="relative overflow-hidden">
+        <!-- Main Dining Room -->
+        <div class="relative min-h-screen flex items-center" style="background-attachment: fixed; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2940&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="container-custom">
+                <div class="max-w-2xl text-white fade-in">
+                    <h2 class="font-playfair text-5xl lg:text-7xl font-bold text-white mb-6 fade-in">Sophisticated Ambiance</h2>
+                    <p class="text-xl leading-relaxed mb-8">
+                        Our main dining room combines contemporary elegance with warm Ugandan hospitality. Every detail, from the handcrafted furniture to the curated lighting, creates an atmosphere of refined comfort.
+                    </p>
+                    <a href="gallery_experience.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary">
+                        Explore Our Spaces
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entertainment Stage -->
+        <div class="relative min-h-screen flex items-center" style="background-attachment: fixed; background-image: linear-gradient(rgba(139,38,53,0.4), rgba(230,126,34,0.4)), url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="container-custom">
+                <div class="max-w-2xl ml-auto text-white fade-in">
+                    <h2 class="font-playfair text-5xl lg:text-7xl font-bold text-white mb-6 fade-in">Live Entertainment</h2>
+                    <p class="text-xl leading-relaxed mb-8">
+                        Our intimate performance space hosts Uganda's finest musicians, creating unforgettable nights where world-class entertainment meets exceptional hospitality.
+                    </p>
+                    <a href="events_entertainment.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary">
+                        Tonight's Lineup
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Private Event Spaces -->
+        <div class="relative min-h-screen flex items-center" style="background-attachment: fixed; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=2940&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="container-custom">
+                <div class="max-w-2xl text-white fade-in">
+                    <h2 class="font-playfair text-5xl lg:text-7xl font-bold text-white mb-6 fade-in">Private Events</h2>
+                    <p class="text-xl leading-relaxed mb-8">
+                        From intimate business dinners to grand celebrations, our private spaces adapt to your vision. Professional event coordination ensures every detail exceeds expectations.
+                    </p>
+                    <a href="reservations_contact.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary">
+                        Plan Your Event
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Integration -->
+    <section class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-6">#Lounge44Kyengera</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    See what our guests are sharing about their experiences
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Instagram-style posts -->
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-lg overflow-hidden mb-4">
+                        <img src="evening.jpg" alt="Customer Experience" class="w-full h-full object-cover" />
+                        <div class="absolute top-3 left-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-2">
+                        "Perfect evening at @lounge44kyengera! The fusion platter was incredible 🍽️✨"
+                    </p>
+                    <p class="text-text-tertiary text-xs">@sarah_kampala • 2 hours ago</p>
+                </div>
+
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop" alt="Live Performance" class="w-full h-full object-cover" />
+                        <div class="absolute top-3 left-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-2">
+                        "The jazz night was phenomenal! 🎷 Already planning my next visit #Lounge44Kyengera"
+                    </p>
+                    <p class="text-text-tertiary text-xs">@musiclover_ug • 5 hours ago</p>
+                </div>
+
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=2940&auto=format&fit=crop" alt="Cocktail Creation" class="w-full h-full object-cover" />
+                        <div class="absolute top-3 left-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-2">
+                        "The Kyengera Sunset cocktail is art in a glass! 🍹 @lounge44kyengera never disappoints"
+                    </p>
+                    <p class="text-text-tertiary text-xs">@cocktailcritic • 1 day ago</p>
+                </div>
+
+                <div class="card hover-lift fade-in">
+                    <div class="relative h-64 rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=2940&auto=format&fit=crop" alt="Private Event" class="w-full h-full object-cover" />
+                        <div class="absolute top-3 left-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-2">
+                        "Perfect venue for our anniversary celebration! Thank you @lounge44kyengera team 💕"
+                    </p>
+                    <p class="text-text-tertiary text-xs">@couples_ug • 2 days ago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Signup -->
+    <section class="section-padding bg-gradient-to-br from-primary to-accent text-white">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6">Join the L44 Circle</h2>
+                <p class="text-xl mb-8 text-white/90">
+                    Become a member and unlock exclusive benefits, priority reservations, and special experiences
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-2">Instant 15% Off</h3>
+                        <p class="text-white/80">On your first visit as a member</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-2">Priority Bookings</h3>
+                        <p class="text-white/80">Reserve the best tables first</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-2">VIP Events</h3>
+                        <p class="text-white/80">Exclusive member-only experiences</p>
+                    </div>
+                </div>
+
+                <div class="max-w-md mx-auto">
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-secondary" />
+                        <button class="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-600 transition-colors">
+                            Join Now
+                        </button>
+                    </div>
+                    <p class="text-white/60 text-sm mt-3">Join 1,200+ members already enjoying exclusive benefits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-6">Ready for Tonight?</h2>
+                <p class="text-xl text-text-secondary mb-12 max-w-3xl mx-auto">
+                    Join us at Lounge 44 for an unforgettable evening of exceptional cuisine, live entertainment, and warm hospitality in the heart of Kyengera.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card text-center hover-lift">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-4">Make a Reservation</h3>
+                        <p class="text-text-secondary mb-6">Secure your table for tonight's dining and entertainment experience</p>
+                        <a href="reservations_contact.html" class="btn-primary inline-flex items-center space-x-2">
+                            <span>Book Your Table</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="card text-center hover-lift">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-4">Order Online</h3>
+                        <p class="text-text-secondary mb-6">Enjoy our exceptional cuisine delivered to your location</p>
+                        <a href="menu_ordering.html" class="btn-secondary">
+                            Browse Menu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                            <span class="text-white font-playfair font-bold text-xl">L44</span>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair font-bold text-xl">Lounge 44</h3>
+                            <p class="text-sm text-gray-400">Kyengera</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Where contemporary sophistication meets warm Ugandan hospitality.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="X (Twitter)">
+                            <i class="bi bi-twitter-x text-2xl"></i>
+                        </a>
+                        <a href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="TikTok">
+                            <i class="bi bi-tiktok text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Instagram">
+                            <i class="bi bi-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="homepage.html" class="text-gray-300 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="menu_ordering.html" class="text-gray-300 hover:text-secondary transition-colors">Menu & Order</a></li>
+                        <li><a href="events_entertainment.html" class="text-gray-300 hover:text-secondary transition-colors">Events</a></li>
+                        <li><a href="gallery_experience.html" class="text-gray-300 hover:text-secondary transition-colors">Gallery</a></li>
+                        <li><a href="reservations_contact.html" class="text-gray-300 hover:text-secondary transition-colors">Reservations</a></li>
+                    <li><a href="admin.html" class="text-gray-300 hover:text-accent transition-colors font-semibold">Admin</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="text-gray-300">Kyengera Town Center<br />Wakiso District, Uganda</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span class="text-gray-300">+256 700 123 456</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="text-gray-300">hello@lounge44.ug</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-6">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex justify-between">
+                            <span>Mon - Thu</span>
+                            <span>11:00 - 23:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Fri - Sat</span>
+                            <span>11:00 - 01:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>12:00 - 22:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Lounge 44 Kyengera. All Rights Reserved. | Website developed by Arthur Creations.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-secondary text-sm transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-secondary text-sm transition-colors">Terms of Service</a>
+                    <a href="admin.html" class="text-gray-400 hover:text-accent text-sm font-semibold transition-colors">Admin</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contextual Navigation Intelligence
+        function updateNavigation() {
+            const currentHour = new Date().getHours();
+            const menuLink = document.getElementById('menu-link');
+            const eventsLink = document.getElementById('events-link');
+
+            if (currentHour >= 11 && currentHour < 17) {
+                // Lunch time - emphasize menu
+                menuLink.textContent = 'Lunch Specials';
+                menuLink.classList.add('text-secondary', 'font-semibold');
+            } else if (currentHour >= 17) {
+                // Evening - emphasize entertainment
+                eventsLink.textContent = 'Tonight\'s Entertainment';
+                eventsLink.classList.add('text-secondary', 'font-semibold');
+            }
+        }
+
+        // Set today's date for reservation widget
+        function initializeReservationWidget() {
+            const dateInput = document.getElementById('reservation-date');
+            const today = new Date();
+            const dateString = today.toISOString().split('T')[0];
+            dateInput.value = dateString;
+
+            // Simulate real-time availability
+            const availabilityStatus = document.getElementById('availability-status');
+            const hour = new Date().getHours();
+            
+            if (hour >= 18 && hour <= 22) {
+                availabilityStatus.innerHTML = '⚠️ Limited Tables';
+                availabilityStatus.className = 'text-warning font-semibold';
+            } else {
+                availabilityStatus.innerHTML = '✓ Tables Available';
+                availabilityStatus.className = 'text-success font-semibold';
+            }
+        }
+
+        // Update event ticker content based on time
+        function updateEventsTicker() {
+            const currentEvent = document.getElementById('current-event');
+            const tonightEvent = document.getElementById('tonight-event');
+            const hour = new Date().getHours();
+
+            if (hour >= 20 && hour <= 23) {
+                currentEvent.textContent = 'Live Jazz Performance - Main Stage';
+            } else if (hour >= 18 && hour < 20) {
+                currentEvent.textContent = 'Happy Hour - Signature Cocktails';
+            } else {
+                currentEvent.textContent = 'Afternoon Lounge - Soft Jazz Playlist';
+            }
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile-optimized reservation widget toggle
+        function toggleMobileReservation() {
+            const widget = document.getElementById('reservation-widget');
+            const mobileCta = document.getElementById('mobile-reserve-cta');
+            if (window.innerWidth < 1024) {
+                if (widget) widget.classList.add('hidden');
+                if (mobileCta) mobileCta.style.display = 'flex';
+            } else {
+                if (widget) widget.classList.remove('hidden');
+                if (mobileCta) mobileCta.style.display = 'none';
+            }
+        }
+
+                // Reservation widget popup/collapse logic (desktop)
+                        function reservationWidgetPopup() {
+                            const widget = document.getElementById('reservation-widget');
+                            const tab = document.getElementById('reservation-tab');
+                            if (!widget || !tab) return;
+                            let interacted = false;
+
+                            function openWidget() {
+                                widget.classList.add('open');
+                                widget.classList.remove('closed');
+                                tab.style.opacity = '0';
+                                tab.style.pointerEvents = 'none';
+                            }
+                            function closeWidget() {
+                                widget.classList.remove('open');
+                                widget.classList.add('closed');
+                                tab.style.opacity = '0.85';
+                                tab.style.pointerEvents = 'auto';
+                            }
+
+                            // Slide in on load
+                            setTimeout(() => {
+                                openWidget();
+                                // Auto-collapse after 2s if not interacted
+                                setTimeout(() => {
+                                    if (!interacted) closeWidget();
+                                }, 2000);
+                            }, 300);
+
+                            // Any click inside widget = interacted
+                            widget.addEventListener('pointerdown', function(e) {
+                                interacted = true;
+                            });
+                            // Tab click reopens
+                            tab.addEventListener('click', function() {
+                                openWidget();
+                                interacted = false;
+                                // Auto-collapse again if not interacted
+                                setTimeout(() => {
+                                    if (!interacted) closeWidget();
+                                }, 2000);
+                            });
+                        }
+
+                // Initialize all functions when DOM is loaded
+                document.addEventListener('DOMContentLoaded', function() {
+                        updateNavigation();
+                        initializeReservationWidget();
+                        updateEventsTicker();
+                        toggleMobileReservation();
+                        reservationWidgetPopup();
+                });
+
+        // Handle window resize for responsive elements
+        window.addEventListener('resize', function() {
+            toggleMobileReservation();
+        });
+
+        // Add parallax effect for desktop
+        if (window.innerWidth >= 1024) {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('[style*="background-attachment: fixed"]');
+                
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    const yPos = -(scrolled * speed);
+                    element.style.backgroundPosition = `center ${yPos}px`;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
