@@ -9,6 +9,70 @@
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flounge446254back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+    <script>
+        // Location sharing function with fallbacks
+        async function shareLocation(event) {
+            event.preventDefault();
+            
+            const locationInfo = {
+                title: 'Lounge 44 Kyengera',
+                text: 'Join us at Lounge 44! Find us here:',
+                url: 'https://maps.google.com/?q=0.290294,32.498121'
+            };
+
+            // Try native share first
+            if (navigator.share) {
+                try {
+                    await navigator.share(locationInfo);
+                    return;
+                } catch (err) {
+                    // If user cancels or error occurs, fall back to clipboard
+                    console.log('Error sharing:', err);
+                }
+            }
+
+            // Fallback to clipboard + alert
+            try {
+                await navigator.clipboard.writeText(locationInfo.url);
+                alert('Location link copied to clipboard! You can now paste and share it.');
+            } catch (err) {
+                // Final fallback: show the link
+                alert('Visit us at: ' + locationInfo.url);
+            }
+        }
+
+        // Handle directions with multiple map providers
+        function getMapsDirections(event) {
+            // Get user's platform
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isIOS = /iphone|ipad|ipod/.test(userAgent);
+            const isAndroid = /android/.test(userAgent);
+            
+            // Our coordinates
+            const lat = '0.290294';
+            const lng = '32.498121';
+            const name = 'Lounge 44 Kyengera';
+            
+            // Determine best maps URL
+            let mapsUrl;
+            if (isIOS) {
+                // Apple Maps
+                mapsUrl = `maps://?q=${name}&ll=${lat},${lng}`;
+            } else if (isAndroid) {
+                // Google Maps Android
+                mapsUrl = `google.navigation:q=${lat},${lng}`;
+            } else {
+                // Default to Google Maps web
+                mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
+            }
+            
+            // Try to open the appropriate maps app
+            window.location.href = mapsUrl;
+            
+            // Prevent default link behavior
+            event.preventDefault();
+        }
+    </script>
 </head>
 <body class="bg-background">
     <!-- Navigation with Contextual Intelligence -->
@@ -325,20 +389,41 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Map Placeholder -->
+                <!-- Map -->
                 <div class="card">
-                    <div class="bg-surface-200 h-80 rounded-lg flex items-center justify-center mb-6">
-                        <div class="text-center">
-                            <svg class="w-16 h-16 text-text-tertiary mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                            </svg>
-                            <p class="text-text-secondary">Interactive Map</p>
-                            <p class="text-sm text-text-tertiary">Kyengera, Wakiso District</p>
-                        </div>
+                    <div class="rounded-lg overflow-hidden h-80">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8103306076666!2d32.49593661472084!3d0.2902940000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMTcnMjUuMSJOIDMywrAyOSc1My4yIkU!5e0!3m2!1sen!2sug!4v1699061234567!5m2!1sen!2sug"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-full"
+                            title="Lounge 44 Kyengera Location">
+                        </iframe>
                     </div>
-                    <div class="flex gap-4">
-                        <button class="btn-primary flex-1">Get Directions</button>
-                        <button class="btn-outline flex-1">Share Location</button>
+                    
+
+                    <div class="text-center mt-6">
+                        <svg class="w-16 h-16 text-text-tertiary mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        <p class="text-text-secondary mb-2">Interactive Map</p>
+                        <p class="text-sm text-text-tertiary mb-6">Kyengera, Wakiso District</p>
+                        <div class="flex gap-4">
+                            <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=0.290294,32.498121', '_blank')" 
+                                    class="btn-primary flex-1">
+                                <i class="bi bi-map-fill mr-2"></i>
+                                Get Directions
+                            </button>
+                            <button onclick="shareLoungeLocation()" 
+                                    class="btn-outline flex-1">
+                                <i class="bi bi-share-fill mr-2"></i>
+                                Share Location
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -566,6 +651,36 @@
         });
 
         // Smooth scrolling for anchor links
+
+        // Location sharing functionality
+        function shareLoungeLocation() {
+            const locationInfo = {
+                title: 'Lounge 44 Kyengera',
+                text: 'Visit us at Lounge 44, Kyengera! Here\'s our location:',
+                url: 'https://maps.google.com/?q=0.290294,32.498121'
+            };
+
+            if (navigator.share) {
+                navigator.share(locationInfo)
+                    .catch(error => {
+                        console.log('Error sharing:', error);
+                        copyToClipboard(locationInfo.url);
+                    });
+            } else {
+                copyToClipboard(locationInfo.url);
+            }
+        }
+
+        function copyToClipboard(text) {
+            // Create a temporary input element
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Location link copied to clipboard! You can now paste and share it.');
+        }
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
