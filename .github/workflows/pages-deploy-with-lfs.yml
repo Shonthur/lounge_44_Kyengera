@@ -14,10 +14,14 @@ jobs:
           lfs: true
           fetch-depth: 0
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - name: Deploy to gh-pages branch
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git checkout --orphan gh-pages
+          git rm -rf .
+          git checkout main -- .
+          git rm -rf .github
+          git add .
+          git commit -m "Deploy with LFS assets" || echo "No changes to commit"
+          git push --force origin gh-pages
