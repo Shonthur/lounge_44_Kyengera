@@ -802,6 +802,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+  /* Small-screen video adjustments: keeps current desktop styles intact */
+  @media (max-width: 640px) {
+    /* Ensure square/aspect containers behave correctly on mobile */
+    .aspect-square{
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+
+    /* Make any iframe inside aspect containers fill and cover */
+    .aspect-square iframe,
+    .aspect-square video{
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+      border: 0;
+    }
+
+    /* Disable hover-scale effects on touch devices to avoid layout jumps */
+    .group:hover .aspect-square iframe,
+    .group:hover .aspect-square video{
+      transform: none !important;
+    }
+
+    /* Prevent overlay gradient from intercepting taps (buttons remain clickable) */
+    .group > .absolute.inset-0.bg-gradient-to-t{
+      pointer-events: none;
+    }
+
+    /* Add small padding around gallery items on narrow screens */
+    .gallery-item-mobile{
+      padding: 0.5rem 0.25rem;
+    }
+  }
+
 @media (min-width: 1024px){
   .section-padding{
     padding-left: 2rem;
