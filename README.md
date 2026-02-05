@@ -31,6 +31,52 @@ npm run dev
 yarn dev
 ```
 
+## 🧩 CMS (Content Management System)
+
+This project includes a simple built-in CMS powered by Node.js + Express.
+
+### Run the CMS server
+
+```bash
+npm run cms
+```
+
+- Windows (no terminal): double-click `Start-CMS.bat`
+
+- Website: `http://localhost:3000/`
+- Admin CMS: `http://localhost:3000/admin/`
+
+### Default login
+
+- Username: `admin`
+- Password: `admin123`
+
+Change the password immediately in **Account** inside the CMS.
+
+### Environment variables (optional)
+
+- `PORT` (default `3000`)
+- `CMS_ADMIN_USERNAME` / `CMS_ADMIN_PASSWORD` (only used to create the first admin user)
+- `CMS_SESSION_SECRET` (recommended; otherwise a random one is generated each run)
+- `CMS_COOKIE_SECURE` (`true` on HTTPS deployments)
+- `CMS_DATA_DIR` or `CMS_DB_PATH` (where the CMS stores `db.json`)
+- `CMS_UPLOADS_DIR` / `CMS_UPLOADS_URL_PREFIX` (where uploads are stored + the public URL prefix)
+
+You can copy `.env.example` to `.env` and edit values.
+
+### Data storage
+
+By default:
+
+- Content is stored in `cms/data/db.json`
+- Uploads are stored in `public/uploads/`
+
+For hosted deployments, use a persistent disk/volume and set `CMS_DATA_DIR` + `CMS_UPLOADS_DIR` so content/uploads don’t reset on redeploy.
+
+### Sell/hand-off tip
+
+If you don’t want the new owner to run commands, set this up once on their computer and pin a shortcut to `Start-CMS.bat`. They can then just open the CMS at `http://localhost:3000/admin/`.
+
 ## 📁 Project Structure
 
 ```

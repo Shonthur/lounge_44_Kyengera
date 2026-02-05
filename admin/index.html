@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lounge 44 CMS</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="min-h-screen bg-surface">
+    <header class="bg-text-primary text-white">
+      <div class="container-custom px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+            <span class="font-playfair font-bold text-lg">L44</span>
+          </div>
+          <div>
+            <div class="font-playfair text-xl font-bold leading-tight">Lounge 44 CMS</div>
+            <div class="text-white/70 text-sm">Content management</div>
+          </div>
+        </div>
+
+        <div id="topbar-user" class="hidden items-center gap-3">
+          <span id="topbar-username" class="text-white/80 text-sm"></span>
+          <button id="logout-btn" class="btn-secondary text-sm px-4 py-2">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-padding">
+      <div class="container-custom px-4">
+        <!-- Login -->
+        <div id="login-view" class="max-w-md mx-auto">
+          <div class="card bg-white p-6 md:p-8">
+            <h1 class="font-playfair text-2xl font-bold text-primary mb-2">Sign in</h1>
+            <p class="text-text-secondary mb-6">Use your CMS admin credentials to manage the site.</p>
+
+            <form id="login-form" class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-text-primary mb-2" for="login-username">Username</label>
+                <input id="login-username" name="username" class="input-field" autocomplete="username" required />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-text-primary mb-2" for="login-password">Password</label>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  class="input-field"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn-primary w-full">Login</button>
+              <div id="login-status" class="text-sm"></div>
+            </form>
+
+            <div class="mt-6 text-xs text-text-secondary">
+              <p class="mb-1">
+                Default login (change immediately): <span class="font-semibold text-text-primary">admin / admin123</span>
+              </p>
+              <p>
+                Set env vars <span class="font-semibold text-text-primary">CMS_ADMIN_USERNAME</span> and
+                <span class="font-semibold text-text-primary">CMS_ADMIN_PASSWORD</span> before first run.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- App -->
+        <div id="app-view" class="hidden">
+          <div class="grid lg:grid-cols-12 gap-8">
+            <aside class="lg:col-span-3">
+              <div class="card bg-white p-4 sticky top-6">
+                <div class="mb-3">
+                  <div class="text-xs text-text-secondary">Signed in as</div>
+                  <div id="sidebar-username" class="font-semibold text-text-primary"></div>
+                </div>
+
+                <nav class="space-y-2">
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="dashboard">
+                    Dashboard
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="settings">
+                    Settings
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="uploads">
+                    Uploads
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="menu">
+                    Menu
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="events">
+                    Events
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="gallery">
+                    Gallery
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="reservations">
+                    Reservations
+                  </button>
+                  <button class="cms-nav w-full text-left px-3 py-2 rounded-lg hover:bg-surface-200" data-view="account">
+                    Account
+                  </button>
+                </nav>
+
+                <div class="mt-6 pt-4 border-t border-surface-300 text-xs text-text-secondary">
+                  <div class="font-semibold text-text-primary mb-1">Server</div>
+                  <div id="api-origin"></div>
+                </div>
+              </div>
+            </aside>
+
+            <section class="lg:col-span-9 space-y-6">
+              <!-- Dashboard -->
+              <div id="view-dashboard" class="cms-view">
+                <div class="card bg-white p-6">
+                  <h2 class="font-playfair text-2xl font-bold text-primary mb-2">Dashboard</h2>
+                  <p class="text-text-secondary mb-6">Quick overview of your content.</p>
+
+                  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 rounded-xl bg-surface-100 border border-surface-300">
+                      <div class="text-xs text-text-secondary">Menu items</div>
+                      <div id="stat-menu" class="text-2xl font-bold text-primary">—</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-surface-100 border border-surface-300">
+                      <div class="text-xs text-text-secondary">Events</div>
+                      <div id="stat-events" class="text-2xl font-bold text-primary">—</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-surface-100 border border-surface-300">
+                      <div class="text-xs text-text-secondary">Gallery items</div>
+                      <div id="stat-gallery" class="text-2xl font-bold text-primary">—</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-surface-100 border border-surface-300">
+                      <div class="text-xs text-text-secondary">New reservations</div>
+                      <div id="stat-reservations" class="text-2xl font-bold text-primary">—</div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 flex flex-wrap gap-3">
+                    <button id="refresh-btn" class="btn-secondary text-sm px-4 py-2">Refresh</button>
+                    <a class="btn-outline text-sm px-4 py-2 inline-block" href="../pages/homepage.html" target="_blank" rel="noopener">
+                      Open website
+                    </a>
+                  </div>
+
+                  <div id="dashboard-status" class="text-sm mt-4"></div>
+                </div>
+              </div>
+
+              <!-- Settings -->
+              <div id="view-settings" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <h2 class="font-playfair text-2xl font-bold text-primary mb-2">Settings</h2>
+                  <p class="text-text-secondary mb-6">Basic site info used around the site.</p>
+
+                  <form id="settings-form" class="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-siteName">Site name</label>
+                      <input id="settings-siteName" class="input-field" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-currency">Currency</label>
+                      <input id="settings-currency" class="input-field" placeholder="UGX" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-contactPhone">Contact phone</label>
+                      <input id="settings-contactPhone" class="input-field" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-contactEmail">Contact email</label>
+                      <input id="settings-contactEmail" class="input-field" type="email" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-address">Address</label>
+                      <input id="settings-address" class="input-field" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="settings-openingHours">Opening hours</label>
+                      <input id="settings-openingHours" class="input-field" />
+                    </div>
+
+                    <div class="md:col-span-2 flex flex-wrap gap-3 items-center mt-2">
+                      <button type="submit" class="btn-primary px-6 py-3">Save settings</button>
+                      <div id="settings-status" class="text-sm"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Uploads -->
+              <div id="view-uploads" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <h2 class="font-playfair text-2xl font-bold text-primary mb-2">Uploads</h2>
+                  <p class="text-text-secondary mb-6">Upload images/videos and copy the URL into Menu/Events/Gallery items.</p>
+
+                  <form id="upload-form" class="space-y-4">
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="upload-file">File</label>
+                      <input id="upload-file" type="file" class="input-field" />
+                    </div>
+                    <div class="flex flex-wrap gap-3 items-center">
+                      <button type="submit" class="btn-primary px-6 py-3">Upload</button>
+                      <div id="upload-status" class="text-sm"></div>
+                    </div>
+                  </form>
+
+                  <div id="upload-result" class="hidden mt-6 p-4 rounded-xl bg-surface-100 border border-surface-300">
+                    <div class="text-xs text-text-secondary mb-2">Uploaded URL</div>
+                    <div class="flex flex-wrap gap-3 items-center">
+                      <code id="upload-url" class="text-sm"></code>
+                      <button id="copy-upload-url" class="btn-secondary text-sm px-4 py-2">Copy</button>
+                      <a id="open-upload-url" class="btn-outline text-sm px-4 py-2" href="#" target="_blank" rel="noopener">Open</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu -->
+              <div id="view-menu" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                      <h2 class="font-playfair text-2xl font-bold text-primary">Menu</h2>
+                      <p class="text-text-secondary text-sm">Manage dishes and drinks shown on the Menu page.</p>
+                    </div>
+                    <button id="menu-new-btn" class="btn-secondary text-sm px-4 py-2">New item</button>
+                  </div>
+
+                  <form id="menu-form" class="grid md:grid-cols-2 gap-4">
+                    <input type="hidden" id="menu-id" />
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-name">Name</label>
+                      <input id="menu-name" class="input-field" required />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-category">Category</label>
+                      <input id="menu-category" class="input-field" placeholder="e.g. Grilled, Cocktails" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-description">Description</label>
+                      <textarea id="menu-description" class="input-field h-24 resize-none"></textarea>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-price">Price</label>
+                      <input id="menu-price" class="input-field" placeholder="e.g. 35000" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-tags">Tags</label>
+                      <input id="menu-tags" class="input-field" placeholder="comma-separated" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="menu-imageUrl">Image URL</label>
+                      <input id="menu-imageUrl" class="input-field" placeholder="/uploads/..." />
+                    </div>
+                    <div class="md:col-span-2 flex items-center gap-3">
+                      <input id="menu-featured" type="checkbox" class="w-4 h-4 text-primary border-surface-300 rounded" />
+                      <label for="menu-featured" class="text-sm text-text-secondary">Featured</label>
+                    </div>
+                    <div class="md:col-span-2 flex flex-wrap gap-3 items-center">
+                      <button type="submit" class="btn-primary px-6 py-3">Save menu item</button>
+                      <button id="menu-delete-btn" type="button" class="btn-outline px-6 py-3 border-red-600 text-red-600 hidden">
+                        Delete
+                      </button>
+                      <div id="menu-status" class="text-sm"></div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <h3 class="font-playfair text-xl font-bold text-primary">All menu items</h3>
+                    <input id="menu-search" class="input-field max-w-xs" placeholder="Search..." />
+                  </div>
+                  <div id="menu-list" class="space-y-3"></div>
+                </div>
+              </div>
+
+              <!-- Events -->
+              <div id="view-events" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                      <h2 class="font-playfair text-2xl font-bold text-primary">Events</h2>
+                      <p class="text-text-secondary text-sm">Manage events shown on the Events page.</p>
+                    </div>
+                    <button id="events-new-btn" class="btn-secondary text-sm px-4 py-2">New event</button>
+                  </div>
+
+                  <form id="events-form" class="grid md:grid-cols-2 gap-4">
+                    <input type="hidden" id="events-id" />
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-title">Title</label>
+                      <input id="events-title" class="input-field" required />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-category">Category</label>
+                      <input id="events-category" class="input-field" placeholder="e.g. Live Music, DJ Nights" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-description">Description</label>
+                      <textarea id="events-description" class="input-field h-24 resize-none"></textarea>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-date">Date</label>
+                      <input id="events-date" type="date" class="input-field" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-time">Time</label>
+                      <input id="events-time" class="input-field" placeholder="19:00" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-price">Price</label>
+                      <input id="events-price" class="input-field" placeholder="e.g. 45000" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="events-imageUrl">Image URL</label>
+                      <input id="events-imageUrl" class="input-field" placeholder="/uploads/..." />
+                    </div>
+                    <div class="md:col-span-2 flex items-center gap-3">
+                      <input id="events-featured" type="checkbox" class="w-4 h-4 text-primary border-surface-300 rounded" />
+                      <label for="events-featured" class="text-sm text-text-secondary">Featured</label>
+                    </div>
+                    <div class="md:col-span-2 flex flex-wrap gap-3 items-center">
+                      <button type="submit" class="btn-primary px-6 py-3">Save event</button>
+                      <button id="events-delete-btn" type="button" class="btn-outline px-6 py-3 border-red-600 text-red-600 hidden">
+                        Delete
+                      </button>
+                      <div id="events-status" class="text-sm"></div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <h3 class="font-playfair text-xl font-bold text-primary">All events</h3>
+                    <input id="events-search" class="input-field max-w-xs" placeholder="Search..." />
+                  </div>
+                  <div id="events-list" class="space-y-3"></div>
+                </div>
+              </div>
+
+              <!-- Gallery -->
+              <div id="view-gallery" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                      <h2 class="font-playfair text-2xl font-bold text-primary">Gallery</h2>
+                      <p class="text-text-secondary text-sm">Manage gallery items shown on the Gallery page.</p>
+                    </div>
+                    <button id="gallery-new-btn" class="btn-secondary text-sm px-4 py-2">New item</button>
+                  </div>
+
+                  <form id="gallery-form" class="grid md:grid-cols-2 gap-4">
+                    <input type="hidden" id="gallery-id" />
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="gallery-title">Title</label>
+                      <input id="gallery-title" class="input-field" required />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="gallery-category">Category</label>
+                      <select id="gallery-category" class="input-field">
+                        <option value="dining">Dining</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="events">Events</option>
+                        <option value="celebrations">Celebrations</option>
+                      </select>
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="gallery-subtitle">Subtitle</label>
+                      <input id="gallery-subtitle" class="input-field" />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="gallery-imageUrl">Image URL</label>
+                      <input id="gallery-imageUrl" class="input-field" placeholder="/uploads/..." required />
+                    </div>
+                    <div class="md:col-span-2 flex flex-wrap gap-3 items-center">
+                      <button type="submit" class="btn-primary px-6 py-3">Save gallery item</button>
+                      <button id="gallery-delete-btn" type="button" class="btn-outline px-6 py-3 border-red-600 text-red-600 hidden">
+                        Delete
+                      </button>
+                      <div id="gallery-status" class="text-sm"></div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <h3 class="font-playfair text-xl font-bold text-primary">All gallery items</h3>
+                    <input id="gallery-search" class="input-field max-w-xs" placeholder="Search..." />
+                  </div>
+                  <div id="gallery-list" class="space-y-3"></div>
+                </div>
+              </div>
+
+              <!-- Reservations -->
+              <div id="view-reservations" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <div class="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                      <h2 class="font-playfair text-2xl font-bold text-primary">Reservations</h2>
+                      <p class="text-text-secondary text-sm">View and update reservation requests.</p>
+                    </div>
+                    <button id="reservations-refresh-btn" class="btn-secondary text-sm px-4 py-2">Refresh</button>
+                  </div>
+
+                  <div id="reservations-list" class="space-y-4"></div>
+                  <div id="reservations-status" class="text-sm mt-4"></div>
+                </div>
+              </div>
+
+              <!-- Account -->
+              <div id="view-account" class="cms-view hidden">
+                <div class="card bg-white p-6">
+                  <h2 class="font-playfair text-2xl font-bold text-primary mb-2">Account</h2>
+                  <p class="text-text-secondary mb-6">Change your password.</p>
+
+                  <form id="password-form" class="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="pw-current">Current password</label>
+                      <input id="pw-current" type="password" class="input-field" required />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-semibold text-text-primary mb-2" for="pw-new">New password</label>
+                      <input id="pw-new" type="password" class="input-field" required />
+                    </div>
+                    <div class="md:col-span-2 flex flex-wrap gap-3 items-center">
+                      <button type="submit" class="btn-primary px-6 py-3">Update password</button>
+                      <div id="password-status" class="text-sm"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../js/admin.js"></script>
+  </body>
+</html>

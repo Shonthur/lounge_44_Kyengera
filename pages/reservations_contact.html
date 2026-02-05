@@ -182,31 +182,31 @@
                 <!-- Booking Form -->
                 <div class="card">
                     <h3 class="text-2xl font-playfair font-bold text-primary mb-6">Book Your Table</h3>
-                    <form class="space-y-6">
+                    <form id="reservation-form" class="space-y-6">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-semibold text-text-primary mb-2">Full Name *</label>
-                                <input type="text" class="input-field" placeholder="Enter your full name" required />
+                                <input type="text" name="name" class="input-field" placeholder="Enter your full name" autocomplete="name" required />
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-text-primary mb-2">Phone Number *</label>
-                                <input type="tel" class="input-field" placeholder="+256 700 123 456" required />
+                                <input type="tel" name="phone" class="input-field" placeholder="+256 700 123 456" autocomplete="tel" required />
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-sm font-semibold text-text-primary mb-2">Email Address</label>
-                            <input type="email" class="input-field" placeholder="your.email@example.com" />
+                            <input type="email" name="email" class="input-field" placeholder="your.email@example.com" autocomplete="email" />
                         </div>
 
                         <div class="grid sm:grid-cols-3 gap-4">
                             <div>
                                 <label class="block text-sm font-semibold text-text-primary mb-2">Date *</label>
-                                <input type="date" class="input-field" required />
+                                <input type="date" name="date" class="input-field" required />
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-text-primary mb-2">Time *</label>
-                                <select class="input-field" required>
+                                <select name="time" class="input-field" required>
                                     <option value>Select time</option>
                                     <option value="11:00">11:00 AM</option>
                                     <option value="12:00">12:00 PM</option>
@@ -224,7 +224,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-text-primary mb-2">Party Size *</label>
-                                <select class="input-field" required>
+                                <select name="partySize" class="input-field" required>
                                     <option value>Guests</option>
                                     <option value="1">1 Guest</option>
                                     <option value="2">2 Guests</option>
@@ -241,7 +241,7 @@
 
                         <div>
                             <label class="block text-sm font-semibold text-text-primary mb-2">Dining Area Preference</label>
-                            <select class="input-field">
+                            <select name="area" class="input-field">
                                 <option value>Any Available</option>
                                 <option value="main">Main Restaurant</option>
                                 <option value="terrace">Outdoor Terrace</option>
@@ -252,7 +252,7 @@
 
                         <div>
                             <label class="block text-sm font-semibold text-text-primary mb-2">Special Requests</label>
-                            <textarea class="input-field h-24 resize-none" placeholder="Dietary restrictions, celebration setup, business meeting privacy, etc."></textarea>
+                            <textarea name="requests" class="input-field h-24 resize-none" placeholder="Dietary restrictions, celebration setup, business meeting privacy, etc."></textarea>
                         </div>
 
                         <div class="flex items-start gap-3">
@@ -261,6 +261,7 @@
                         </div>
 
                         <button type="submit" class="btn-primary w-full">Confirm Reservation</button>
+                        <div id="reservation-status" class="text-sm mt-3"></div>
                     </form>
                 </div>
 
@@ -644,11 +645,13 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your reservation! We will confirm your booking via SMS and WhatsApp within 15 minutes.');
-        });
+        // Form submission fallback (when opened as a local file, without the CMS server)
+        if (window.location.protocol === 'file:') {
+            document.getElementById('reservation-form')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your reservation! Please call or WhatsApp us to confirm your booking.');
+            });
+        }
 
         // Smooth scrolling for anchor links
 
@@ -694,5 +697,6 @@
             });
         });
     </script>
+    <script type="module" src="../js/site-cms.js"></script>
 </body>
 </html>

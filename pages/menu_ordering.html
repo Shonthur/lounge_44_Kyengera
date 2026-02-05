@@ -111,6 +111,30 @@
         </div>
     </section>
 
+    <!-- CMS Menu (auto-filled when the CMS server is running) -->
+    <div id="cms-menu-root" class="hidden">
+        <section class="section-padding">
+            <div class="container-custom">
+                <div class="text-center mb-12">
+                    <h2 class="font-playfair text-4xl font-bold text-primary mb-4">Chef's Recommendations</h2>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto">Updated from the Lounge 44 CMS</p>
+                </div>
+
+                <div id="cms-menu-featured" class="grid lg:grid-cols-2 gap-8 mb-16"></div>
+
+                <div class="flex items-end justify-between mb-8">
+                    <div>
+                        <h2 class="font-playfair text-3xl font-bold text-primary">Browse Menu</h2>
+                        <p class="text-text-secondary">Tap any item to add it to your cart</p>
+                    </div>
+                </div>
+
+                <div id="cms-menu-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            </div>
+        </section>
+    </div>
+
+    <div id="static-menu-root">
     <!-- Chef's Recommendations -->
     <section class="section-padding">
         <div class="container-custom">
@@ -312,6 +336,8 @@
             </div>
         </div>
     </section>
+
+    </div>
 
     <!-- Ordering System -->
     <section class="section-padding">
@@ -647,5 +673,6 @@
             });
         });
     </script>
+    <script type="module" src="../js/site-cms.js"></script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "settings": {
+    "siteName": "Lounge 44",
+    "currency": "UGX",
+    "contactPhone": "+256 700 123 456",
+    "contactEmail": "info@lounge44.ug",
+    "address": "Kyengera Town, Wakiso District, Uganda",
+    "openingHours": "Mon-Thu: 5:00 PM - 12:00 AM; Fri-Sun: 5:00 PM - 2:00 AM"
+  },
+  "menu": [
+    {
+      "id": "seed-menu-tilapia",
+      "name": "Grilled Tilapia Kyengera Style",
+      "description": "Fresh Lake Victoria tilapia marinated in Ugandan spices, grilled to perfection.",
+      "price": 35000,
+      "category": "Grilled",
+      "tags": [
+        "spicy"
+      ],
+      "imageUrl": "/pages/tilapia.jpg",
+      "featured": true,
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-05T00:00:00.000Z"
+    },
+    {
+      "id": "seed-menu-goat-stew",
+      "name": "Slow-Cooked Goat Stew",
+      "description": "Rich, tender goat stew with seasonal vegetables and house spices.",
+      "price": 42000,
+      "category": "Ugandan Fusion",
+      "tags": [
+        "signature"
+      ],
+      "imageUrl": "/pages/goat.jpg",
+      "featured": true,
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-05T00:00:00.000Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "seed-event-valentines-2026",
+      "title": "Valentine's Dinner & Live Jazz",
+      "description": "A special set menu with live jazz and a complimentary welcome drink.",
+      "date": "2026-02-14",
+      "time": "19:00",
+      "price": 60000,
+      "category": "Live Music",
+      "imageUrl": "/pages/evening.jpg",
+      "featured": true,
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-05T00:00:00.000Z"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "seed-gallery-evening",
+      "title": "Warm Lights, Cozy Vibes",
+      "subtitle": "Where the night begins",
+      "category": "entertainment",
+      "imageUrl": "/pages/evening.jpg",
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-05T00:00:00.000Z"
+    },
+    {
+      "id": "seed-gallery-red-pulse",
+      "title": "Red Pulse Party",
+      "subtitle": "Energy all night",
+      "category": "events",
+      "imageUrl": "/pages/Red Pulse Party.jpg",
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-05T00:00:00.000Z"
+    }
+  ],
+  "reservations": [],
+  "users": [
+    {
+      "id": "8fa13112-83cc-4980-a09a-5e85331f0392",
+      "username": "admin",
+      "passwordHash": "$2a$10$uEqUBda1cO.4pKCjvUsAIeV9.345kBY4/UwYofdo4b2eVNhWj52..",
+      "role": "admin",
+      "createdAt": "2026-02-05T17:18:58.510Z"
+    }
+  ]
+}
