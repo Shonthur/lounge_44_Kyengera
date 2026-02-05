@@ -14,8 +14,8 @@
 </head>
 <body class="bg-background">
     <!-- Navigation with Contextual Intelligence -->
-    <nav class="bg-white/95 backdrop-blur-sm shadow-subtle sticky top-0 z-50" id="main-nav">
-        <div class="container-custom">
+    <nav class="bg-white/95 backdrop-blur-sm shadow-subtle sticky top-0 z-50 w-full" id="main-nav">
+        <div class="container-custom px-4 sm:px-6 lg:px-10">
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
@@ -27,17 +27,18 @@
                 </div>
 
                 <!-- Desktop Navigation with Contextual Content -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
-                    <a href="menu_ordering.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
-                    <a href="events_entertainment.html" class="text-primary font-semibold">Events</a>
-                    <a href="gallery_experience.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
-                    <a href="reservations_contact.html" class="text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
-                    <a href="about_lounge_44.html" class="text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                <div class="hidden lg:flex items-center gap-2 relative" data-nav-desktop>
+                    <span class="nav-indicator" data-nav-indicator aria-hidden="true"></span>
+                    <a href="homepage.html" class="nav-link">Home</a>
+                    <a href="menu_ordering.html" class="nav-link">Menu & Order</a>
+                    <a href="events_entertainment.html" class="nav-link nav-link--active">Events</a>
+                    <a href="gallery_experience.html" class="nav-link">Gallery</a>
+                    <a href="reservations_contact.html" class="nav-link">Reservations</a>
+                    <a href="about_lounge_44.html" class="nav-link">About</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                <button class="lg:hidden p-2 rounded-lg hover:bg-surface-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300" id="mobile-menu-btn" aria-label="Open menu">
                     <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -45,14 +46,14 @@
             </div>
 
             <!-- Mobile Navigation -->
-            <div class="lg:hidden hidden" id="mobile-menu">
-                <div class="py-4 space-y-4 border-t border-surface-300">
-                    <a href="homepage.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
-                    <a href="menu_ordering.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Menu & Order</a>
-                    <a href="events_entertainment.html" class="block text-primary font-semibold">Events</a>
-                    <a href="gallery_experience.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Gallery</a>
-                    <a href="reservations_contact.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">Reservations</a>
-                    <a href="about_lounge_44.html" class="block text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+            <div class="lg:hidden nav-mobile" id="mobile-menu">
+                <div class="py-4 space-y-2 border-t border-surface-300">
+                    <a href="homepage.html" class="nav-link w-full justify-start">Home</a>
+                    <a href="menu_ordering.html" class="nav-link w-full justify-start">Menu & Order</a>
+                    <a href="events_entertainment.html" class="nav-link nav-link--active w-full justify-start">Events</a>
+                    <a href="gallery_experience.html" class="nav-link w-full justify-start">Gallery</a>
+                    <a href="reservations_contact.html" class="nav-link w-full justify-start">Reservations</a>
+                    <a href="about_lounge_44.html" class="nav-link w-full justify-start">About</a>
                 </div>
             </div>
         </div>
@@ -411,12 +412,15 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 -->
                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                    <div class="aspect-square overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden bg-surface-200">
                         <iframe
-                          src="https://www.youtube.com/embed/lJXaNYTVjrQ?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=lJXaNYTVjrQ&controls=1&modestbranding=1"
-                          class="absolute inset-0 w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                          src="https://www.youtube-nocookie.com/embed/lJXaNYTVjrQ?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=lJXaNYTVjrQ&controls=1&modestbranding=1"
+                          title="Jazz Night Spectacular"
+                          loading="lazy"
+                          class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                           frameborder="0"
-                          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
                           allowfullscreen>
                         </iframe>
                     </div>
@@ -436,12 +440,15 @@
 
                                 <!-- Gallery Item 2 -->
                                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                                        <div class="aspect-square overflow-hidden">
+                                        <div class="relative aspect-square overflow-hidden bg-surface-200">
                                                 <iframe
-                                                    src="https://www.youtube.com/embed/NK7i4zccYW8?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=NK7i4zccYW8&controls=1&modestbranding=1"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    src="https://www.youtube-nocookie.com/embed/NK7i4zccYW8?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=NK7i4zccYW8&controls=1&modestbranding=1"
+                                                    title="Afrobeats Explosion"
+                                                    loading="lazy"
+                                                    class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                                                     frameborder="0"
-                                                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
                                                     allowfullscreen>
                                                 </iframe>
                                         </div>
@@ -461,12 +468,15 @@
 
                 <!-- Gallery Item 3 -->
                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                    <div class="aspect-square overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden bg-surface-200">
                                                 <iframe
-                                                    src="https://www.youtube.com/embed/C1eSwe9hY3s?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=C1eSwe9hY3s&controls=1&modestbranding=1"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    src="https://www.youtube-nocookie.com/embed/C1eSwe9hY3s?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=C1eSwe9hY3s&controls=1&modestbranding=1"
+                                                    title="Cultural Heritage Night"
+                                                    loading="lazy"
+                                                    class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                                                     frameborder="0"
-                                                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
                                                     allowfullscreen>
                                                 </iframe>
                     </div>
@@ -486,12 +496,15 @@
 
                 <!-- Gallery Item 4 -->
                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                    <div class="aspect-square overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden bg-surface-200">
                                                 <iframe
-                                                    src="https://www.youtube.com/embed/VtP9AcXTDTw?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=VtP9AcXTDTw&controls=1&modestbranding=1"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    src="https://www.youtube-nocookie.com/embed/VtP9AcXTDTw?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=VtP9AcXTDTw&controls=1&modestbranding=1"
+                                                    title="Rock the Night"
+                                                    loading="lazy"
+                                                    class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                                                     frameborder="0"
-                                                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
                                                     allowfullscreen>
                                                 </iframe>
                     </div>
@@ -511,12 +524,15 @@
 
                 <!-- Gallery Item 5 -->
                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                    <div class="aspect-square overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden bg-surface-200">
                                                 <iframe
-                                                    src="https://www.youtube.com/embed/AIAoVlWPWnA?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=AIAoVlWPWnA&controls=1&modestbranding=1"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    src="https://www.youtube-nocookie.com/embed/AIAoVlWPWnA?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=AIAoVlWPWnA&controls=1&modestbranding=1"
+                                                    title="Corporate Celebration"
+                                                    loading="lazy"
+                                                    class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                                                     frameborder="0"
-                                                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
                                                     allowfullscreen>
                                                 </iframe>
                     </div>
@@ -536,12 +552,15 @@
 
                 <!-- Gallery Item 6 -->
                 <div class="group relative overflow-hidden rounded-xl hover-lift">
-                    <div class="aspect-square overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden bg-surface-200">
                                                 <iframe
-                                                    src="https://www.youtube.com/embed/zek8iimbYak?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=zek8iimbYak&controls=1&modestbranding=1"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    src="https://www.youtube-nocookie.com/embed/zek8iimbYak?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=zek8iimbYak&controls=1&modestbranding=1"
+                                                    title="Acoustic Sessions"
+                                                    loading="lazy"
+                                                    class="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
                                                     frameborder="0"
-                                                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
                                                     allowfullscreen>
                                                 </iframe>
                     </div>
@@ -567,22 +586,22 @@
             <div id="memorable-gallery" class="hidden mt-8">
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="img.jpg" class="w-full h-full object-cover" alt="Gallery 1" />
+                        <img src="../img.jpg" class="w-full h-full object-cover" alt="Gallery 1" />
                     </div>
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="img.jpg" class="w-full h-full object-cover" alt="Gallery 1" />
+                        <img src="../img.jpg" class="w-full h-full object-cover" alt="Gallery 1" />
                     </div>
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="img1.jpg" class="w-full h-full object-cover" alt="Gallery 2" />
+                        <img src="../img1.jpg" class="w-full h-full object-cover" alt="Gallery 2" />
                     </div>
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="img2.jpg" class="w-full h-full object-cover" alt="Gallery 3" />
+                        <img src="../img2.jpg" class="w-full h-full object-cover" alt="Gallery 3" />
                     </div>
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="img3.jpg" class="w-full h-full object-cover" alt="Gallery 4" />
+                        <img src="../img3.jpg" class="w-full h-full object-cover" alt="Gallery 4" />
                     </div>
                     <div class="aspect-square overflow-hidden rounded-xl bg-surface-100">
-                        <img src="Night Party_09.jpg" class="w-full h-full object-cover" alt="Gallery 5" />
+                        <img src="../Night Party_09.jpg" class="w-full h-full object-cover" alt="Gallery 5" />
                     </div>
                 </div>
             </div>
@@ -916,12 +935,8 @@
         </div>
     </footer>
 
+    <script src="../js/nav.js" defer></script>
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

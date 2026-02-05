@@ -2448,6 +2448,109 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Navigation enhancements (shared) */
+.nav-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: rgb(107 107 107);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  z-index: 10;
+}
+
+.nav-link:hover{
+  color: rgb(139 38 53);
+}
+
+.nav-link--active{
+  color: rgb(139 38 53);
+}
+
+.nav-mobile .nav-link--active{
+  background: rgba(139, 38, 53, 0.08);
+  border: 1px solid rgba(139, 38, 53, 0.16);
+}
+
+.nav-indicator{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2.5rem;
+  transform: translateX(0) translateY(-50%);
+  width: 0;
+  border-radius: 9999px;
+  background: rgba(139, 38, 53, 0.10);
+  border: 1px solid rgba(139, 38, 53, 0.18);
+  box-shadow: 0 8px 30px rgba(139, 38, 53, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, width;
+  z-index: 0;
+}
+
+.nav-mobile{
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  pointer-events: none;
+  transition: max-height 420ms cubic-bezier(0.19, 1, 0.22, 1), opacity 220ms ease-out, transform 220ms ease-out;
+}
+
+.nav-mobile.is-open{
+  max-height: 520px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-mobile a.nav-link{
+  opacity: 0;
+  transform: translateY(-0.375rem);
+  transition: transform 260ms ease-out, opacity 260ms ease-out;
+  transition-delay: calc(var(--i, 0) * 35ms);
+}
+
+.nav-mobile.is-open a.nav-link{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobile-menu-btn svg{
+  transition: transform 250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#mobile-menu-btn[aria-expanded="true"] svg{
+  transform: rotate(90deg);
+}
+
 .aspect-golden {
   aspect-ratio: 1.618 / 1;
 }
