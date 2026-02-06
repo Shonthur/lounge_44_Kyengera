@@ -209,9 +209,6 @@
                 @media (min-width: 1024px) {
                     body {
                         overflow-x: hidden;
-                        padding-bottom: 32px;
-                        padding-left: 5px;
-                        padding-right: 5px;
                         scrollbar-width: none; /* Firefox */
                     }
                     body::-webkit-scrollbar {
@@ -259,14 +256,47 @@
                         animation-duration: 14s;
                     }
                 }
+                /* Footer edge-to-edge styling */
+                footer {
+                    margin-left: -1rem;
+                    margin-right: -1rem;
+                }
+                @media (min-width: 640px) {
+                    footer {
+                        margin-left: -1.5rem;
+                        margin-right: -1.5rem;
+                    }
+                }
+                @media (min-width: 1024px) {
+                    footer {
+                        margin-left: -2rem;
+                        margin-right: -2rem;
+                    }
+                }
+                footer .container-custom {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                @media (min-width: 640px) {
+                    footer .container-custom {
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                    }
+                }
+                @media (min-width: 1024px) {
+                    footer .container-custom {
+                        padding-left: 2rem;
+                        padding-right: 2rem;
+                    }
+                }
             </style>
 
         <!-- Weekend Spotlight (auto slideshow) -->
         <section class="section-padding bg-background">
             <div class="container-custom container-custom-wide">
-                <div class="grid lg:grid-cols-12 gap-8 xl:gap-10 2xl:gap-12 items-stretch">
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                     <div class="lg:col-span-7">
-                        <div class="ad-spotlight hover-lift h-full flex flex-col">
+                        <div class="ad-spotlight hover-lift h-full">
                             <div class="flex items-start justify-between gap-4 mb-4">
                                 <div>
                                     <span class="ad-badge">This Weekend</span>
@@ -315,55 +345,49 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 flex flex-col gap-6">
-                        <div class="card hover-lift flex flex-col h-full">
-                            <div class="p-6 flex-1">
-                                <h3 class="font-playfair text-2xl lg:text-3xl font-bold text-primary mb-2">Tonight’s Mood</h3>
-                                <p class="text-text-secondary mb-4">The perfect flow from first sip to last song.</p>
-                                <ul class="space-y-3 text-sm lg:text-base text-text-secondary">
-                                    <li class="flex items-center gap-3">
-                                        <span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
-                                        Happy hour picks + lounge classics
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <span class="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
-                                        Live sets and curated playlists
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
-                                        Late-night bites and smooth service
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="p-6 border-t border-surface-200 flex-shrink-0">
-                                <div class="flex flex-wrap gap-3">
-                                    <a href="menu_ordering.html" class="magnetic text-secondary font-semibold hover:text-secondary-600 transition-colors" data-magnetic="0.18">Browse Menu →</a>
-                                    <a href="gallery_experience.html" class="magnetic text-primary font-semibold hover:text-primary-700 transition-colors" data-magnetic="0.18">View Gallery →</a>
-                                </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="card hover-lift">
+                            <h3 class="font-playfair text-2xl font-bold text-primary mb-2">Tonight’s Mood</h3>
+                            <p class="text-text-secondary mb-4">The perfect flow from first sip to last song.</p>
+                            <ul class="space-y-3 text-sm text-text-secondary">
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+                                    Happy hour picks + lounge classics
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
+                                    Live sets and curated playlists
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+                                    Late-night bites and smooth service
+                                </li>
+                            </ul>
+                            <div class="mt-5 flex flex-wrap gap-3">
+                                <a href="menu_ordering.html" class="magnetic text-secondary font-semibold hover:text-secondary-600 transition-colors" data-magnetic="0.18">Browse Menu →</a>
+                                <a href="gallery_experience.html" class="magnetic text-primary font-semibold hover:text-primary-700 transition-colors" data-magnetic="0.18">View Gallery →</a>
                             </div>
                         </div>
 
-                        <div class="card hover-lift flex flex-col h-full">
-                            <div class="p-6 flex-1">
-                                <h3 class="font-playfair text-2xl lg:text-3xl font-bold text-primary mb-2">Why Guests Love Us</h3>
-                                <p class="text-text-secondary mb-4">Small details that make a big difference.</p>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-surface rounded-xl p-4">
-                                        <p class="text-xs text-text-secondary">Ambience</p>
-                                        <p class="font-semibold text-text-primary">Elegant + warm</p>
-                                    </div>
-                                    <div class="bg-surface rounded-xl p-4">
-                                        <p class="text-xs text-text-secondary">Music</p>
-                                        <p class="font-semibold text-text-primary">Live + DJ</p>
-                                    </div>
-                                    <div class="bg-surface rounded-xl p-4">
-                                        <p class="text-xs text-text-secondary">Drinks</p>
-                                        <p class="font-semibold text-text-primary">Signature</p>
-                                    </div>
-                                    <div class="bg-surface rounded-xl p-4">
-                                        <p class="text-xs text-text-secondary">Service</p>
-                                        <p class="font-semibold text-text-primary">Attentive</p>
-                                    </div>
+                        <div class="card hover-lift">
+                            <h3 class="font-playfair text-2xl font-bold text-primary mb-2">Why Guests Love Us</h3>
+                            <p class="text-text-secondary mb-4">Small details that make a big difference.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-surface rounded-xl p-4">
+                                    <p class="text-xs text-text-secondary">Ambience</p>
+                                    <p class="font-semibold text-text-primary">Elegant + warm</p>
+                                </div>
+                                <div class="bg-surface rounded-xl p-4">
+                                    <p class="text-xs text-text-secondary">Music</p>
+                                    <p class="font-semibold text-text-primary">Live + DJ</p>
+                                </div>
+                                <div class="bg-surface rounded-xl p-4">
+                                    <p class="text-xs text-text-secondary">Drinks</p>
+                                    <p class="font-semibold text-text-primary">Signature</p>
+                                </div>
+                                <div class="bg-surface rounded-xl p-4">
+                                    <p class="text-xs text-text-secondary">Service</p>
+                                    <p class="font-semibold text-text-primary">Attentive</p>
                                 </div>
                             </div>
                         </div>
