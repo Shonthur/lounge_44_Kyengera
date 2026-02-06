@@ -247,7 +247,8 @@ function buildUpcomingEventCard(item, currency) {
   bottom.appendChild(price);
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.className = "text-xs text-primary hover:text-primary-700 font-medium";
+  btn.className = "magnetic text-xs text-primary hover:text-primary-700 font-semibold";
+  btn.setAttribute("data-magnetic", "0.22");
   btn.textContent = "Book \u2192";
   bottom.appendChild(btn);
   body.appendChild(bottom);

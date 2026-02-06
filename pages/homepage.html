@@ -140,13 +140,13 @@
                         Experience Kyengera's premier lifestyle destination with exceptional cuisine, live entertainment, and unforgettable moments.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 fade-in">
-                        <a href="reservations_contact.html" class="btn-primary inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-glow-primary">
+                        <a href="reservations_contact.html" class="btn-primary inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-glow-primary magnetic" data-magnetic="0.12">
                             <span>Reserve Your Table</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
                         </a>
-                        <a href="menu_ordering.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary">
+                        <a href="menu_ordering.html" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary magnetic" data-magnetic="0.12">
                             Explore Menu
                         </a>
                     </div>
@@ -260,6 +260,118 @@
                     }
                 }
             </style>
+
+        <!-- Weekend Spotlight (auto slideshow) -->
+        <section class="section-padding bg-background">
+            <div class="container-custom container-custom-wide">
+                <div class="grid lg:grid-cols-12 gap-8 xl:gap-10 2xl:gap-12 items-stretch">
+                    <div class="lg:col-span-7">
+                        <div class="ad-spotlight hover-lift h-full flex flex-col">
+                            <div class="flex items-start justify-between gap-4 mb-4">
+                                <div>
+                                    <span class="ad-badge">This Weekend</span>
+                                    <h2 class="font-playfair text-3xl lg:text-4xl font-bold text-white mt-2">A Weekend Worth Dressing Up For</h2>
+                                    <p class="text-white/80 mt-2">Live music, DJ nights, signature cocktails — all in one place.</p>
+                                </div>
+                                <div class="text-right hidden sm:block">
+                                    <p class="text-xs text-white/70">From</p>
+                                    <p class="text-white text-2xl font-bold">UGX 50,000</p>
+                                </div>
+                            </div>
+
+                            <div class="slideshow rounded-xl overflow-hidden aspect-video mb-4" data-slideshow data-interval="4400">
+                                <div data-slide class="is-active">
+                                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop" alt="Crowd and lights" class="w-full h-full object-cover" loading="lazy" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white font-semibold">Friday Night Energy</p>
+                                        <p class="text-white/80 text-sm">Dancefloor-ready • Good vibes guaranteed</p>
+                                    </div>
+                                </div>
+                                <div data-slide>
+                                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1600&auto=format&fit=crop" alt="Signature cocktails" class="w-full h-full object-cover" loading="lazy" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white font-semibold">Signature Cocktails</p>
+                                        <p class="text-white/80 text-sm">Golden hour sips • Crafted in-house</p>
+                                    </div>
+                                </div>
+                                <div data-slide>
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Elegant dining" class="w-full h-full object-cover" loading="lazy" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white font-semibold">Dinner &amp; Lounge</p>
+                                        <p class="text-white/80 text-sm">Modern elegance • Warm hospitality</p>
+                                    </div>
+                                </div>
+
+                                <div class="absolute bottom-3 right-3 slideshow-dots" data-dots aria-label="Weekend spotlight slides"></div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="reservations_contact.html" class="btn-primary inline-flex items-center justify-center bg-gradient-to-r from-primary to-accent hover:shadow-glow-primary magnetic" data-magnetic="0.14">Book a Table</a>
+                                <a href="events_entertainment.html" class="btn-secondary border border-white/30 text-white hover:bg-white hover:text-primary magnetic" data-magnetic="0.14">See Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex flex-col gap-6">
+                        <div class="card hover-lift flex flex-col h-full">
+                            <div class="p-6 flex-1">
+                                <h3 class="font-playfair text-2xl lg:text-3xl font-bold text-primary mb-2">Tonight’s Mood</h3>
+                                <p class="text-text-secondary mb-4">The perfect flow from first sip to last song.</p>
+                                <ul class="space-y-3 text-sm lg:text-base text-text-secondary">
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+                                        Happy hour picks + lounge classics
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
+                                        Live sets and curated playlists
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+                                        Late-night bites and smooth service
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 border-t border-surface-200 flex-shrink-0">
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="menu_ordering.html" class="magnetic text-secondary font-semibold hover:text-secondary-600 transition-colors" data-magnetic="0.18">Browse Menu →</a>
+                                    <a href="gallery_experience.html" class="magnetic text-primary font-semibold hover:text-primary-700 transition-colors" data-magnetic="0.18">View Gallery →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card hover-lift flex flex-col h-full">
+                            <div class="p-6 flex-1">
+                                <h3 class="font-playfair text-2xl lg:text-3xl font-bold text-primary mb-2">Why Guests Love Us</h3>
+                                <p class="text-text-secondary mb-4">Small details that make a big difference.</p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-surface rounded-xl p-4">
+                                        <p class="text-xs text-text-secondary">Ambience</p>
+                                        <p class="font-semibold text-text-primary">Elegant + warm</p>
+                                    </div>
+                                    <div class="bg-surface rounded-xl p-4">
+                                        <p class="text-xs text-text-secondary">Music</p>
+                                        <p class="font-semibold text-text-primary">Live + DJ</p>
+                                    </div>
+                                    <div class="bg-surface rounded-xl p-4">
+                                        <p class="text-xs text-text-secondary">Drinks</p>
+                                        <p class="font-semibold text-text-primary">Signature</p>
+                                    </div>
+                                    <div class="bg-surface rounded-xl p-4">
+                                        <p class="text-xs text-text-secondary">Service</p>
+                                        <p class="font-semibold text-text-primary">Attentive</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Dynamic Content Grid -->
     <section class="section-padding bg-white">
         <div class="container-custom">
@@ -664,6 +776,7 @@
     </footer>
 
     <script src="../js/nav.js" defer></script>
+    <script src="../js/effects.js" defer></script>
     <script>
 
         // Contextual Navigation Intelligence
