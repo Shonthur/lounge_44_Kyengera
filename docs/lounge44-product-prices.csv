@@ -1,0 +1,15 @@
+SKU,Product Name,Category,Price (UGX),Description,Featured
+seed-menu-tilapia,Grilled Tilapia Kyengera Style,Grilled,35000,"Fresh Lake Victoria tilapia marinated in Ugandan spices, grilled to perfection.",TRUE
+seed-menu-goat-stew,Slow-Cooked Goat Stew,Ugandan Fusion,42000,"Rich, tender goat stew with seasonal vegetables and house spices.",TRUE
+ex-menu-nyamachoma,Nyama Choma Beef Platter,Grilled,48000,Char-grilled beef cuts served with kachumbari and chips.,FALSE
+ex-menu-peri-peri-chicken,Peri-Peri Chicken Platter,Grilled,38000,Spicy peri-peri chicken with salad and wedges.,FALSE
+ex-menu-chicken-wings-6,Spicy Chicken Wings (6pcs),Starters,22000,Crispy wings tossed in house spicy glaze.,FALSE
+ex-menu-samosas-4,Vegetable Samosas (4pcs),Starters,12000,Golden samosas served with chili dip.,FALSE
+ex-menu-matooke-groundnut,Matooke & Groundnut Sauce,Ugandan Classics,25000,Steamed matooke with creamy groundnut sauce.,FALSE
+ex-menu-fish-and-chips,Fish & Chips,Mains,32000,Crispy fish fillet with chips and tartar sauce.,FALSE
+ex-menu-chips-dips,Chips & Dips,Sides,10000,Seasoned fries with house dips.,FALSE
+ex-drink-house-coffee,House Coffee,Beverages,8000,Fresh brewed coffee (Arabica).,FALSE
+ex-drink-passion-juice,Fresh Passion Juice,Beverages,9000,Fresh passion fruit juice served chilled.,FALSE
+ex-dessert-lava-cake,Chocolate Lava Cake,Desserts,18000,Warm chocolate cake with a molten center.,FALSE
+ex-mocktail-passion-mojito,Passion Mojito (Mocktail),Mocktails,15000,"Mint, lime, passion fruit, and soda.",FALSE
+ex-cocktail-signature,Signature Cocktail,Cocktails,25000,Ask the bartender for today's signature mix.,FALSE

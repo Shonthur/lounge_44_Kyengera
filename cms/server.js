@@ -14,6 +14,7 @@ const rateLimit = require("express-rate-limit");
 const multer = require("multer");
 
 const { getDb, load, toPublicContent, update } = require("./lib/store");
+const { getAssistantReply, sanitizeHistory } = require("./lib/ai-assistant");
 
 const UPLOADS_DIR = process.env.CMS_UPLOADS_DIR
   ? path.resolve(process.env.CMS_UPLOADS_DIR)
@@ -127,6 +128,46 @@ async function main() {
   );
 
   app.get("/api/health", (req, res) => res.json({ ok: true }));
+
+  // AI Assistant (public)
+  app.use(
+    "/api/assistant",
+    rateLimit({
+      windowMs: 15 * 60 * 1000,
+      max: Number(process.env.AI_ASSISTANT_MAX_REQUESTS || 40),
+      standardHeaders: true,
+      legacyHeaders: false,
+    }),
+  );
+
+  app.post("/api/assistant/chat", async (req, res) => {
+    if (process.env.AI_ASSISTANT_ENABLED === "false") {
+      return res.status(404).json({ error: "Not Found" });
+    }
+
+    const { message, history } = req.body ?? {};
+    if (!isNonEmptyString(message)) return res.status(400).json({ error: "Message is required" });
+
+    const trimmed = message.trim();
+    if (trimmed.length > 2000) return res.status(400).json({ error: "Message is too long" });
+
+    try {
+      const reply = await getAssistantReply({
+        message: trimmed,
+        history: sanitizeHistory(history),
+        siteData: toPublicContent(),
+      });
+      return res.json({ reply });
+    } catch (err) {
+      const code = err?.code ? String(err.code) : "";
+      if (code === "AI_NOT_CONFIGURED") {
+        return res.status(503).json({ error: "AI assistant is not configured" });
+      }
+
+      console.error("[cms] AI assistant error:", err);
+      return res.status(502).json({ error: "AI assistant request failed" });
+    }
+  });
 
   app.post("/api/auth/login", async (req, res) => {
     const { username, password } = req.body ?? {};

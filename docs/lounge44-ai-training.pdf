@@ -1,0 +1,196 @@
+%PDF-1.4
+%PDF-Generator
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 3 0 R 5 0 R ] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2856 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+1 0 0 1 50 781 Tm
+(Lounge 44 - Website Knowledge Pack \(for AI\)) Tj
+T*
+(Generated: 2026-02-11 06:59:51.158 UTC) Tj
+T*
+() Tj
+T*
+(Quick facts \(source of truth: CMS settings\)) Tj
+T*
+(-------------------------------------------) Tj
+T*
+(- Address: Kyengera Town, Wakiso District, Uganda) Tj
+T*
+(- Phone: +256 700 123 456) Tj
+T*
+(- Email: info@lounge44.ug) Tj
+T*
+(- Opening hours: Mon-Thu: 5:00 PM - 12:00 AM; Fri-Sun: 5:00 PM - 2:00 AM) Tj
+T*
+(- Currency: UGX) Tj
+T*
+() Tj
+T*
+(Details currently shown on website pages \(verify\)) Tj
+T*
+(-------------------------------------------------) Tj
+T*
+(- Emails on Home page: hello@lounge44.ug) Tj
+T*
+(- Emails on Reservations page: reservations@lounge44.ug) Tj
+T*
+(- Phone numbers on Reservations page: +256 700 123 456, +256 700 999 888) Tj
+T*
+(- WhatsApp link: https://wa.me/256700123456) Tj
+T*
+(- Reservations page hours: 11:00 AM - 2:00 AM) Tj
+T*
+(- Home page footer hours: Mon-Thu 11:00 - 23:00; Fri-Sat 11:00 - 01:00; Sunday 12:00 - 22:00) Tj
+T*
+(- Cancellation policy: Reservations can be cancelled up to 2 hours before the scheduled time) Tj
+T*
+(  without penalty. Late cancellations may incur a service charge.) Tj
+T*
+(- No-show policy: Tables are held for 15 minutes past reservation time. No-shows may be) Tj
+T*
+(  charged a service fee for future bookings.) Tj
+T*
+(- Group reservations policy: Parties of 8 or more require advance confirmation and may) Tj
+T*
+(  require a deposit. Special group menus available.) Tj
+T*
+(- Emergency line shown: +256 700 999 888) Tj
+T*
+() Tj
+T*
+(Website pages \(visitor navigation\)) Tj
+T*
+(----------------------------------) Tj
+T*
+(- Home: pages/homepage.html) Tj
+T*
+(- Menu & Order: pages/menu_ordering.html) Tj
+T*
+(- Events: pages/events_entertainment.html) Tj
+T*
+(- Gallery: pages/gallery_experience.html) Tj
+T*
+(- Reservations: pages/reservations_contact.html) Tj
+T*
+(- About: pages/about_lounge_44.html) Tj
+T*
+() Tj
+T*
+(Reservations \(how to guide users\)) Tj
+T*
+(---------------------------------) Tj
+T*
+(- Recommend the Reservations page for bookings. Ask for: full name, phone number, date,) Tj
+T*
+(  time, party size, preferred area, and any special requests.) Tj
+T*
+(- If they need immediate help, provide the official phone/email.) Tj
+T*
+(- Avoid collecting payment details or passwords.) Tj
+T*
+() Tj
+T*
+(Menu \(from CMS\)) Tj
+T*
+(---------------) Tj
+T*
+(- Grilled Tilapia Kyengera Style \(Grilled, Featured\) - UGX 35,000: Fresh Lake Victoria) Tj
+T*
+(  tilapia marinated in Ugandan spices, grilled to perfection.) Tj
+T*
+(- Slow-Cooked Goat Stew \(Ugandan Fusion, Featured\) - UGX 42,000: Rich, tender goat stew with) Tj
+T*
+(  seasonal vegetables and house spices.) Tj
+T*
+() Tj
+T*
+(Events \(from CMS\)) Tj
+T*
+(-----------------) Tj
+T*
+(- Valentine's Dinner & Live Jazz \(Live Music, Featured\) - 2026-02-14 19:00 - UGX 60,000: A) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1129 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+1 0 0 1 50 781 Tm
+(  special set menu with live jazz and a complimentary welcome drink.) Tj
+T*
+() Tj
+T*
+(AI assistant behavior \(recommended\)) Tj
+T*
+(-----------------------------------) Tj
+T*
+(- Tone: premium, warm, concise, and helpful.) Tj
+T*
+(- If a fact is not in this pack, say you're not sure and suggest contacting the venue.) Tj
+T*
+(- For reservations: guide users to the Reservations page and/or the official phone/email.) Tj
+T*
+(- Do not accept payments. Do not request passwords or sensitive personal info.) Tj
+T*
+() Tj
+T*
+(Example Q&A) Tj
+T*
+(-----------) Tj
+T*
+(- Q: What time do you open? A: Provide opening hours from Quick facts.) Tj
+T*
+(- Q: Can I book a table for 4 tonight at 8pm? A: Ask for name/phone and direct to) Tj
+T*
+(  Reservations page.) Tj
+T*
+(- Q: What are your featured dishes? A: List featured menu items from CMS.) Tj
+T*
+(- Q: What events are coming up? A: List CMS events with date/time and pricing if available.) Tj
+T*
+() Tj
+T*
+(Note: Some HTML pages may contain placeholder contact details/hours. Keep CMS settings up to) Tj
+T*
+(date so the AI stays consistent.) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000024 00000 n 
+0000000073 00000 n 
+0000000138 00000 n 
+0000000264 00000 n 
+0000003171 00000 n 
+0000003297 00000 n 
+0000004477 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4547
+%%EOF

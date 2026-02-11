@@ -77,6 +77,23 @@ For hosted deployments, use a persistent disk/volume and set `CMS_DATA_DIR` + `C
 
 If you don’t want the new owner to run commands, set this up once on their computer and pin a shortcut to `Start-CMS.bat`. They can then just open the CMS at `http://localhost:3000/admin/`.
 
+## 🤖 AI Concierge (optional)
+
+This project includes a floating chat widget (“AI Concierge”) that answers using your CMS content (settings, menu, events).
+
+### Setup
+
+1. Copy `.env.example` to `.env`
+2. Set `OPENAI_API_KEY`
+3. (Optional) Set `OPENAI_MODEL` and `AI_ASSISTANT_ENABLED`
+4. Start the CMS (`npm run cms` or double-click `Start-CMS.bat`)
+5. Open the website at `http://localhost:3000/`
+
+### Notes
+
+- If you open the HTML via `file://`, the assistant can’t work (no API server).
+- Requests are rate-limited; change `AI_ASSISTANT_MAX_REQUESTS` to adjust.
+
 ## 📁 Project Structure
 
 ```
